@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>919 Golf Co. — Direction A: The Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#16362D; --green-800:#1E3B32; --green-700:#537261;
+  --cream:#FAEDD7; --cream-dk:#EFE0C4;
+  --gold:#BFA570; --gold-lt:#D4BE8E;
+  --ink:#1E3B32; --muted:#5A6B60;
+  --maxw:1240px;
+  --serif:'Libre Caslon Display',Georgia,serif; --sans:'Karla',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{line-height:1.65;margin:0}
+a{color:inherit}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(15,46,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,162,39,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
+.logo img{height:38px;width:auto;display:block}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:36px;list-style:none;margin:0;padding:0}
+.navlinks a{color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s}
+.navlinks a:hover{opacity:1}
+.btn{display:inline-block;padding:13px 26px;border-radius:2px;font-size:13.5px;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:all .25s}
+.btn-gold{background:var(--gold);color:var(--green-900)}
+.btn-gold:hover{background:var(--gold-lt)}
+.btn-outline{border:1px solid rgba(247,244,236,.45);color:var(--cream)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+.hero{background:linear-gradient(100deg,rgba(22,54,45,.96) 0%,rgba(30,59,50,.9) 46%,rgba(30,59,50,.55) 72%,rgba(30,59,50,.35) 100%),url(img/hero-sim.jpg) center/cover;color:var(--cream);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;opacity:.09;background-image:repeating-linear-gradient(115deg,transparent 0 38px,var(--gold) 38px 39px)}
+.hero .wrap{position:relative;z-index:2;padding-top:112px;padding-bottom:112px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(46px,5.4vw,76px);color:var(--cream)}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero p.lede{font-size:18px;line-height:1.7;color:rgba(247,244,236,.8);margin:28px 0 38px;max-width:50ch}
+.rule{width:64px;height:2px;background:var(--gold);margin:24px 0 0}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.photo-slot{aspect-ratio:4/5;border:1px dashed rgba(201,162,39,.5);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(0,0,0,.16);text-align:center;padding:24px}
+.photo-slot svg{opacity:.5}
+.photo-slot span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,236,.55);line-height:1.7}
+
+/* TRUST STRIP */
+.strip{background:var(--green-900);border-top:1px solid rgba(201,162,39,.22);color:var(--cream)}
+.strip .wrap{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;padding:22px 32px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
+
+/* SPECS */
+.specs{padding:104px 0}
+.sec-head{text-align:center;max-width:660px;margin:0 auto 64px}
+.sec-head h2{font-size:clamp(32px,3.6vw,46px);margin:16px 0 18px}
+.sec-head p{color:var(--muted);font-size:17px}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cream-dk);border:1px solid var(--cream-dk)}
+.spec{background:var(--cream);padding:48px 36px;text-align:center}
+.spec .ico{width:44px;height:44px;margin:0 auto 22px;color:var(--green-700)}
+.spec .val{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--green-800);margin-bottom:8px;letter-spacing:-.02em}
+.spec .lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+.spec p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+/* PACKAGES */
+.pkgs{background:var(--green-900);color:var(--cream);padding:104px 0}
+.pkgs .sec-head h2{color:var(--cream)}
+.pkgs .sec-head p{color:rgba(247,244,236,.68)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pkg{border:1px solid rgba(247,244,236,.16);padding:44px 34px;display:flex;flex-direction:column;background:rgba(255,255,255,.025);transition:border-color .25s,transform .25s}
+.pkg:hover{border-color:rgba(201,162,39,.55);transform:translateY(-4px)}
+.pkg.feat{border-color:var(--gold);background:rgba(201,162,39,.07);position:relative}
+.badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--green-900);font-size:10px;font-weight:700;letter-spacing:.16em;padding:5px 16px;text-transform:uppercase;white-space:nowrap}
+.pkg .the{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold);margin-bottom:2px}
+.pkg h3{font-size:31px;color:var(--cream);margin-bottom:10px}
+.pkg .dur{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,236,.55);margin-bottom:22px}
+.pkg p{font-size:15px;color:rgba(247,244,236,.75);flex-grow:1;margin-bottom:30px}
+.pkg .btn{text-align:center}
+
+/* PROCESS */
+.process{padding:104px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:52px;margin-top:12px}
+.step{position:relative;padding-top:34px}
+.step .num{font-family:var(--serif);font-size:60px;font-weight:700;color:var(--cream-dk);line-height:.8;position:absolute;top:0;left:0}
+.step h3{font-size:22px;margin:0 0 12px;position:relative}
+.step p{font-size:15px;color:var(--muted)}
+
+/* ADDONS */
+.addons{background:var(--cream-dk);padding:96px 0}
+.addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,0,0,.09);border:1px solid rgba(0,0,0,.09);margin-top:48px}
+.addon{background:var(--cream);padding:32px 34px;display:flex;gap:20px;align-items:flex-start}
+.addon .ico{width:26px;height:26px;flex-shrink:0;color:var(--green-700);margin-top:3px}
+.addon h4{font-family:var(--serif);font-size:19px;font-weight:600;margin:0 0 7px}
+.addon p{font-size:14.5px;color:var(--muted)}
+
+/* CTA */
+.cta{background:linear-gradient(165deg,var(--green-800),var(--green-900));color:var(--cream);padding:112px 0;text-align:center;position:relative;overflow:hidden}
+.cta::after{content:'';position:absolute;inset:0;opacity:.07;background-image:repeating-linear-gradient(115deg,transparent 0 38px,var(--gold) 38px 39px)}
+.cta .wrap{position:relative;z-index:2}
+.cta h2{font-size:clamp(34px,4.4vw,56px);color:var(--cream);max-width:16ch;margin:18px auto 20px}
+.cta p{color:rgba(247,244,236,.75);max-width:52ch;margin:0 auto 38px;font-size:17px}
+
+/* FOOTER */
+footer{background:var(--green-900);color:rgba(247,244,236,.55);border-top:1px solid rgba(247,244,236,.1);padding:44px 0;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:72px;padding-bottom:72px}
+  .photo-slot{aspect-ratio:16/10}
+  .spec-grid,.pkg-grid,.steps,.addon-grid{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .strip .wrap{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo"><img src="logo/919-lockup-h-cream.svg" alt="919 Golf Co."></div>
+  <ul class="navlinks">
+    <li><a href="#specs">The Setup</a></li>
+    <li><a href="#pkgs">Packages</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#cta" class="btn btn-gold">Request a Quote</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Mobile Golf Simulator · The Triangle, NC</div>
+    <h1>Elevate Your Event.<br><em>One Swing at a Time.</em></h1>
+    <div class="rule"></div>
+    <p class="lede">919 Golf Co. brings the excitement of the golf course directly to your guests — creating an interactive experience that sparks competition, conversation, and lasting memories.</p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn btn-gold">Request a Quote</a>
+      <a href="#pkgs" class="btn btn-outline">View Packages</a>
+    </div>
+  </div>
+  <div></div>
+</div></header>
+
+<div class="strip"><div class="wrap">
+  <span>Weddings</span><span>Corporate</span><span>Tailgates</span><span>Fundraisers</span><span>Private Parties</span>
+</div></div>
+
+<section class="specs" id="specs"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Ok, cool… but why 919 Golf Co.?</div>
+    <h2>Because your cousin's Nintendo Wii doesn't count as a golf simulator.</h2>
+    <p>Every piece of our setup is built to deliver a premium experience that looks great, plays great, and keeps guests coming back for another swing.</p>
+  </div>
+  <div class="spec-grid">
+    <div class="spec">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5a2 2 0 012-2h3M16 3h3a2 2 0 012 2v3M21 16v3a2 2 0 01-2 2h-3M8 21H5a2 2 0 01-2-2v-3"/></svg></div>
+      <div class="val">17×15 ft</div>
+      <div class="lbl">Enclosure</div>
+      <p>A spacious inflatable enclosure. Because every golfer needs a little space.</p>
+    </div>
+    <div class="spec">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+      <div class="val">GC3</div>
+      <div class="lbl">Launch Monitor</div>
+      <p>Camera-based tracking that captures every stripe and slice.</p>
+    </div>
+    <div class="spec">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="val">4K</div>
+      <div class="lbl">Projector</div>
+      <p>Crystal-clear visuals. Because why the heck not.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="pkgs" id="pkgs"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Packages for every golfer</div>
+    <h2>Find your format.</h2>
+    <p>Three ways to bring the course to your guests — each one fully staffed, set up, and broken down by us.</p>
+  </div>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="the">The</div><h3>Tee Time</h3>
+      <div class="dur">Hourly · 2 Hour Minimum</div>
+      <p>Perfect for weeknight events, tailgates, and backyard get-togethers.</p>
+      <a href="#cta" class="btn btn-outline">Inquire for Pricing</a>
+    </div>
+    <div class="pkg feat">
+      <div class="badge">Most Popular</div>
+      <div class="the">The</div><h3>Scramble</h3>
+      <div class="dur">Half-Day Rental</div>
+      <p>The go-to package for weddings, parties, and all other private events.</p>
+      <a href="#cta" class="btn btn-gold">Inquire for Pricing</a>
+    </div>
+    <div class="pkg">
+      <div class="the">The</div><h3>Invitational</h3>
+      <div class="dur">6–8 Hour Rental</div>
+      <p>Great for corporate events, fundraisers, festivals, and all-day events.</p>
+      <a href="#cta" class="btn btn-outline">Inquire for Pricing</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="process" id="how"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">How it works</div>
+    <h2>Way easier than picking out your new driver.</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="num">01</div><h3>Reach out</h3><p>Fill out an inquiry form with details about your event and any questions. We'll send back a custom quote within 1–2 days.</p></div>
+    <div class="step"><div class="num">02</div><h3>Lock it in</h3><p>Sign a simple agreement and pay a 50% deposit. It locks in your booking and counts toward the total. Balance is due 7 days prior.</p></div>
+    <div class="step"><div class="num">03</div><h3>Leave the rest to us</h3><p>We arrive early to set up, attend the simulator throughout your event, and break it all down after. You just kick back and enjoy.</p></div>
+  </div>
+</div></section>
+
+<section class="addons"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Upgrade your experience</div>
+    <h2>Add-ons &amp; extras.</h2>
+  </div>
+  <div class="addon-grid">
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V10M12 20V4M18 20v-7"/></svg></div>
+      <div><h4>Custom Leaderboard</h4><p>Branded real-time scoring displays. Perfect for competition, team building, and corporate events.</p></div>
+    </div>
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.1h-4.4L8.5 9.5z"/></svg></div>
+      <div><h4>Soccer Golf <em style="color:var(--gold);font-style:normal;font-size:11px;letter-spacing:.1em">COMING SOON</em></h4><p>Aim, kick, and score. A fun blend of soccer and golf — perfect for all ages.</p></div>
+    </div>
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-10a7 7 0 0114 0c0 4.8-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+      <div><h4>Extended Travel</h4><p>Events 50+ miles beyond Raleigh/Durham? No worries — reach out for a reasonable travel quote.</p></div>
+    </div>
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+      <div><h4>Additional Hours</h4><p>Extend your event beyond the selected package.</p></div>
+    </div>
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg></div>
+      <div><h4>Generator</h4><p>No power? No problem. If there's no 120V source within 100 ft, we'll bring a generator for a small fee.</p></div>
+    </div>
+    <div class="addon">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div><h4>Full-Service Setup</h4><p>Included with every package — we handle setup, attend throughout, and break down after.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta" id="cta"><div class="wrap">
+  <div class="eyebrow">Get a quote today</div>
+  <h2>Let's make your event one to remember.</h2>
+  <p>Fill out a brief inquiry and we'll get back to you with a custom quote as soon as possible.</p>
+  <a href="#" class="btn btn-gold" style="padding:17px 40px;font-size:15px">Request Your Quote</a>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 919 Golf Co. · Raleigh · Durham · The Triangle, NC</div>
+  <div>hello@919golfco.com</div>
+</div></footer>
+
+</body>
+</html>
