@@ -176,11 +176,23 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   .pkg,.stat{padding-left:22px;padding-right:22px}
   .wrap{padding:0 20px}
 }
+
+/* --- compact nav: swap to the mark, never let the CTA wrap --- */
+.brand .mark,.logo .mark{display:none}
+nav .btn,.navcta{white-space:nowrap}
+@media(max-width:620px){
+  .brand .lockup,.logo .lockup{display:none}
+  .brand .mark,.logo .mark{display:block;height:30px;width:auto}
+}
+@media(max-width:400px){
+  nav .btn,.navcta{display:none}
+}
+@media(max-width:900px){ body{padding-bottom:64px} }
 </style>
 </head>
 <body>
 <nav><div class="wrap">
-  <a href="b-floodlight.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co."></div></a>
+  <a href="b-floodlight.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div></a>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="b-floodlight.html">Home</a></li><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html" style="opacity:1;font-weight:700">FAQ</a></li><li><a href="b-floodlight-contact.html">Contact</a></li><li><a href="b-floodlight-book.html">Book</a></li></ul>
   <a href="b-floodlight-book.html" class="btn btn-lime">Get a Quote</a>

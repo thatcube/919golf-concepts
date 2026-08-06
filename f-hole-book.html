@@ -256,11 +256,23 @@ textarea{min-height:110px;resize:vertical}
   .cardgrid,.bkgrid{grid-template-columns:1fr}
   .f-half,.f-quarter{grid-column:span 4}
 }
+
+/* --- compact nav: swap to the mark, never let the CTA wrap --- */
+.brand .mark,.logo .mark{display:none}
+nav .btn,.navcta{white-space:nowrap}
+@media(max-width:620px){
+  .brand .lockup,.logo .lockup{display:none}
+  .brand .mark,.logo .mark{display:block;height:30px;width:auto}
+}
+@media(max-width:400px){
+  nav .btn,.navcta{display:none}
+}
+@media(max-width:900px){ body{padding-bottom:64px} }
 </style>
 </head>
 <body>
 <div class="navbar"><div class="navinner">
-  <a href="f-hole.html" class="brand"><img src="logo/919-round-lockup-black.svg" alt="919 Golf Co."></a>
+  <a href="f-hole.html" class="brand"><img src="logo/919-round-lockup-black.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-black.svg" alt="" class="mark" aria-hidden="true"></a>
   <input type="checkbox" id="navmenu" class="navtoggle">
   <label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks">

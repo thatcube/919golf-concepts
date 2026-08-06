@@ -168,11 +168,23 @@ nav{position:sticky;top:0}
   .logo img{height:28px}
 }
 @media(max-width:380px){ nav .btn{display:none} }
+
+/* --- compact nav: swap to the mark, never let the CTA wrap --- */
+.brand .mark,.logo .mark{display:none}
+nav .btn,.navcta{white-space:nowrap}
+@media(max-width:620px){
+  .brand .lockup,.logo .lockup{display:none}
+  .brand .mark,.logo .mark{display:block;height:30px;width:auto}
+}
+@media(max-width:400px){
+  nav .btn,.navcta{display:none}
+}
+@media(max-width:900px){ body{padding-bottom:64px} }
 </style>
 </head>
 <body>
 <nav><div class="wrap">
-  <a href="a-the-club.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co."></div></a>
+  <a href="a-the-club.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div></a>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="a-the-club.html">Home</a></li><li><a href="a-the-club-services.html" style="opacity:1;font-weight:700">Services</a></li><li><a href="a-the-club-faq.html">FAQ</a></li><li><a href="a-the-club-contact.html">Contact</a></li><li><a href="a-the-club-book.html">Book</a></li></ul>
   <a href="a-the-club-book.html" class="btn btn-gold">Request a Quote</a>
