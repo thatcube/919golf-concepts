@@ -161,14 +161,18 @@ nav{position:sticky;top:0}
 /* --- compact nav: swap to the mark, never let the CTA wrap --- */
 .brand .mark,.logo .mark{display:none}
 nav .btn,.navcta{white-space:nowrap}
-@media(max-width:620px){
-  .brand .lockup,.logo .lockup{display:none}
-  .brand .mark,.logo .mark{display:block;height:30px;width:auto}
-}
-@media(max-width:400px){
-  nav .btn,.navcta{display:none}
-}
 @media(max-width:900px){ body{padding-bottom:64px} }
+
+/* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
+.qarrow{display:none;width:15px;height:15px}
+@media(max-width:405px){
+  nav .btn .qtxt{display:none}
+  nav .btn .qarrow{display:block}
+  nav .btn{padding:0!important;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .navcta span{display:none}
+  .navcta{padding:4px;border:none;background:transparent}
+  .brand .lockup,.logo .lockup{max-width:150px}
+}
 </style>
 </head>
 <body>
@@ -176,7 +180,7 @@ nav .btn,.navcta{white-space:nowrap}
   <div class="logo"><img src="logo/919-round-lockup-black.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-black.svg" alt="" class="mark" aria-hidden="true"></div>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="d-range.html">Home</a></li><li><a href="d-range-services.html">Services</a></li><li><a href="d-range-faq.html">FAQ</a></li><li><a href="d-range-contact.html">Contact</a></li><li><a href="d-range-book.html">Book</a></li></ul>
-  <a href="d-range-book.html" class="btn btn-solid">Get a Quote</a>
+  <a href="d-range-book.html" class="btn btn-solid" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 <header class="phead"><div class="wrap">
   <div class="eyebrow">Book now</div>

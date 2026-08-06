@@ -232,14 +232,18 @@ footer{padding:56px 28px 0}
 /* --- compact nav: swap to the mark, never let the CTA wrap --- */
 .brand .mark,.logo .mark{display:none}
 nav .btn,.navcta{white-space:nowrap}
-@media(max-width:620px){
-  .brand .lockup,.logo .lockup{display:none}
-  .brand .mark,.logo .mark{display:block;height:30px;width:auto}
-}
-@media(max-width:400px){
-  nav .btn,.navcta{display:none}
-}
 @media(max-width:900px){ body{padding-bottom:64px} }
+
+/* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
+.qarrow{display:none;width:15px;height:15px}
+@media(max-width:413px){
+  nav .btn .qtxt{display:none}
+  nav .btn .qarrow{display:block}
+  nav .btn{padding:0!important;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .navcta span{display:none}
+  .navcta{padding:4px;border:none;background:transparent}
+  .brand .lockup,.logo .lockup{max-width:150px}
+}
 </style>
 </head>
 <body>
