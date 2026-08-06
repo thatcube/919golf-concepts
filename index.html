@@ -14,15 +14,18 @@
 body{margin:0;font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);
   -webkit-font-smoothing:antialiased}
 @view-transition{navigation:auto}
-::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){
-  animation-duration:320ms;animation-timing-function:cubic-bezier(.165,.84,.44,1)}
+header,footer{view-transition-name:none}
+::view-transition-old(root){animation:vtOut 200ms cubic-bezier(.165,.84,.44,1) forwards}
+::view-transition-new(root){animation:none}
+@keyframes vtOut{from{opacity:1}to{opacity:0}}
 @media(prefers-reduced-motion:no-preference){
   @keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   header,.row,.pages,.more a,footer{animation:riseIn 900ms cubic-bezier(.165,.84,.44,1) both;
     animation-delay:var(--d,0ms)}
 }
 @media(prefers-reduced-motion:reduce){
-  ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
+  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
+  header,.row,.pages,.more a,footer{animation:none!important;opacity:1!important;transform:none!important}
 }
 .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 a{color:inherit;text-decoration:none}

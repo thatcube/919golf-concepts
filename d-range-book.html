@@ -183,12 +183,30 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 /* Native cross-document view transitions — no JS, no blank-page risk.
    Falls back to a plain navigation where unsupported. */
 @view-transition{navigation:auto}
-::view-transition-group(root),
-::view-transition-old(root),
-::view-transition-new(root){
-  animation-duration:320ms;
-  animation-timing-function:cubic-bezier(.165,.84,.44,1);
+
+/* Persistent chrome: the nav and footer are identical across pages, so give
+   them their own transition names. They hold in place instead of being
+   snapshotted into the root cross-fade — the same effect an SPA gets by
+   simply not re-rendering its header. */
+nav,.navbar{view-transition-name:site-nav}
+footer{view-transition-name:site-footer}
+::view-transition-old(site-nav),::view-transition-old(site-footer){
+  animation:none;
+  display:none;
 }
+::view-transition-new(site-nav),::view-transition-new(site-footer){
+  animation:none;
+  mix-blend-mode:normal;
+}
+
+/* Only ONE entrance animation. The outgoing page dissolves; the incoming
+   page is already at full opacity, so the staggered rise-in below is the
+   entrance rather than a second animation layered on a cross-fade. */
+::view-transition-old(root){
+  animation:vtOut 200ms cubic-bezier(.165,.84,.44,1) forwards;
+}
+::view-transition-new(root){ animation:none }
+@keyframes vtOut{from{opacity:1}to{opacity:0}}
 
 @media(prefers-reduced-motion:no-preference){
   /* entrance: longer, expo-style ease with real travel */
@@ -201,9 +219,9 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 }
 @media(prefers-reduced-motion:reduce){
   [data-rv]{opacity:1!important;transform:none!important;animation:none!important}
-  ::view-transition-group(root),
-  ::view-transition-old(root),
-  ::view-transition-new(root){animation:none!important}
+  ::view-transition-old(root),::view-transition-new(root),
+  ::view-transition-old(site-nav),::view-transition-new(site-nav),
+  ::view-transition-old(site-footer),::view-transition-new(site-footer){animation:none!important}
 }
 </style>
 </head>
@@ -211,7 +229,7 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 <nav><div class="wrap">
   <div class="logo"><img src="logo/919-round-lockup-black.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-black.svg" alt="" class="mark" aria-hidden="true"></div>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
-  <ul class="navlinks"><li><a href="d-range.html">Home</a></li><li><a href="d-range-gallery.html">Gallery</a></li><li><a href="d-range-services.html">Services</a></li><li><a href="d-range-faq.html">FAQ</a></li><li><a href="d-range-contact.html">Contact</a></li><li><a href="d-range-book.html">Book</a></li></ul>
+  <ul class="navlinks"><li><a href="d-range.html">Home</a></li><li><a href="d-range-gallery.html">Gallery</a></li><li><a href="d-range-services.html">Services</a></li><li><a href="d-range-faq.html">FAQ</a></li><li><a href="d-range-contact.html">Contact</a></li><li><a href="d-range-book.html" aria-current="page">Book</a></li></ul>
   <a href="d-range-book.html" class="btn btn-solid" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 <header class="phead"><div class="wrap">
