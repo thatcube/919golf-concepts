@@ -175,21 +175,32 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
   nav .btn,.navcta{display:none}
 }
 
-/* ---------- subtle page + scroll animation ---------- */
+
+/* ---------- page transitions (portfolio-style) ---------- */
+/* Native cross-document view transitions — no JS, no blank-page risk.
+   Falls back to a plain navigation where unsupported. */
+@view-transition{navigation:auto}
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root){
+  animation-duration:320ms;
+  animation-timing-function:cubic-bezier(.165,.84,.44,1);
+}
+
 @media(prefers-reduced-motion:no-preference){
-  /* page enters */
-  body{animation:pgIn .45s cubic-bezier(.22,.61,.36,1)}
-  @keyframes pgIn{from{opacity:0}to{opacity:1}}
-  /* leaving: fade the whole page before navigating */
-  body.pg-leaving{opacity:0;transition:opacity .26s ease}
-  /* elements reveal as they scroll in */
-  [data-rv]{opacity:0;transform:translateY(14px);
-    transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1);
-    transition-delay:var(--d,0ms)}
-  [data-rv].rv-in{opacity:1;transform:none}
+  /* entrance: longer, expo-style ease with real travel */
+  @keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  [data-rv]{opacity:0;transform:translateY(20px);
+    animation:riseIn 900ms cubic-bezier(.165,.84,.44,1) forwards;
+    animation-delay:var(--d,0ms);
+    animation-play-state:paused}
+  [data-rv].rv-in{animation-play-state:running}
 }
 @media(prefers-reduced-motion:reduce){
-  [data-rv]{opacity:1!important;transform:none!important}
+  [data-rv]{opacity:1!important;transform:none!important;animation:none!important}
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root){animation:none!important}
 }
 </style>
 </head>
@@ -292,63 +303,43 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 <a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#F1EEE7;color:#0C1826;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.4)">← All directions</a>
 
 
+
 <script>
 (function(){
-  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (mq.matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // stagger reveals within each section
   var sels = '.sec-head,.sec-h,.center,.spec,.stat,.fcard,.pkg,.prow,.crow,.stp,.step,'
            + '.addon,.add,.ic,.bt,.gs,.qa details,.ccard,.tile,.herocontent,.bkside,.bkform,'
            + '.ptable,.card-list,.pkg-list,.steps,.feat,.bento,.galgrid,.cgrid,.add-grid,.svcshots';
-  var nodes = Array.prototype.slice.call(document.querySelectorAll(sels));
-  nodes.forEach(function(n){
-    if (n.closest('nav')) return;
-    n.setAttribute('data-rv','');
-  });
+  var nodes = Array.prototype.slice.call(document.querySelectorAll(sels))
+                .filter(function(n){ return !n.closest('nav'); });
+  nodes.forEach(function(n){ n.setAttribute('data-rv',''); });
+
+  function reveal(el, i){
+    el.style.setProperty('--d', (i > 0 ? Math.min(i,4) * 140 : 0) + 'ms');
+    el.classList.add('rv-in');
+  }
 
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if (!e.isIntersecting) return;
       var sibs = Array.prototype.slice.call(e.target.parentNode.children)
-                  .filter(function(c){return c.hasAttribute && c.hasAttribute('data-rv');});
-      var i = Math.min(sibs.indexOf(e.target), 5);
-      e.target.style.setProperty('--d', (i > 0 ? i * 70 : 0) + 'ms');
-      e.target.classList.add('rv-in');
+                  .filter(function(c){ return c.hasAttribute && c.hasAttribute('data-rv'); });
+      reveal(e.target, sibs.indexOf(e.target));
       io.unobserve(e.target);
     });
-  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  }, {rootMargin:'0px 0px -6% 0px', threshold:0.06});
 
   nodes.forEach(function(n){ io.observe(n); });
 
-  // anything already in view on load reveals immediately
+  // above-the-fold content animates immediately, staggered
   requestAnimationFrame(function(){
+    var vh = window.innerHeight, i = 0;
     nodes.forEach(function(n){
-      var r = n.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.92) { n.classList.add('rv-in'); io.unobserve(n); }
+      if (n.getBoundingClientRect().top < vh * 0.94) { reveal(n, i++); io.unobserve(n); }
     });
   });
-
-  // fade out before same-site navigation
-  document.addEventListener('click', function(ev){
-    var a = ev.target.closest && ev.target.closest('a');
-    if (!a) return;
-    var href = a.getAttribute('href') || '';
-    if (!href || href.charAt(0) === '#' || a.target === '_blank'
-        || href.indexOf('mailto:') === 0 || href.indexOf('http') === 0) return;
-    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return;
-    ev.preventDefault();
-    document.body.classList.add('pg-leaving');
-    setTimeout(function(){ window.location.href = href; }, 240);
-  });
-
-  // restore on back/forward
-  window.addEventListener('pageshow', function(){ document.body.classList.remove('pg-leaving'); });
-  window.addEventListener('popstate', function(){ document.body.classList.remove('pg-leaving'); });
-  // safety: if navigation stalls, bring the page back
-  window.addEventListener('beforeunload', function(){});
 })();
 </script>
-
 </body>
 </html>
