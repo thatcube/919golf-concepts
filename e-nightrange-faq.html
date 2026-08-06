@@ -219,13 +219,30 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 @media(max-width:375px){
   nav .btn,.navcta{display:none}
 }
+
+/* ---------- subtle page + scroll animation ---------- */
+@media(prefers-reduced-motion:no-preference){
+  /* page enters */
+  body{animation:pgIn .45s cubic-bezier(.22,.61,.36,1)}
+  @keyframes pgIn{from{opacity:0}to{opacity:1}}
+  /* leaving: fade the whole page before navigating */
+  body.pg-leaving{opacity:0;transition:opacity .26s ease}
+  /* elements reveal as they scroll in */
+  [data-rv]{opacity:0;transform:translateY(14px);
+    transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1);
+    transition-delay:var(--d,0ms)}
+  [data-rv].rv-in{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-rv]{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a href="e-nightrange.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div></a>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
-  <ul class="navlinks"><li><a href="e-nightrange.html">Home</a></li><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
+  <ul class="navlinks"><li><a href="e-nightrange.html">Home</a></li><li><a href="e-nightrange-gallery.html">Gallery</a></li><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
   <a href="e-nightrange-book.html" class="btn btn-amber" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 <header class="phead"><div class="wrap"><div class="eyebrow">Frequently asked</div><h1>Your questions, answered.</h1><p>Everything people usually ask before booking. Still unsure about something? Just reach out.</p></div></header>
@@ -241,5 +258,64 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
   </div>
 </div></footer>
 <a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#F1EEE7;color:#0C1826;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.4)">← All directions</a>
+
+<script>
+(function(){
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.matches) return;
+
+  // stagger reveals within each section
+  var sels = '.sec-head,.sec-h,.center,.spec,.stat,.fcard,.pkg,.prow,.crow,.stp,.step,'
+           + '.addon,.add,.ic,.bt,.gs,.qa details,.ccard,.tile,.herocontent,.bkside,.bkform,'
+           + '.ptable,.card-list,.pkg-list,.steps,.feat,.bento,.galgrid,.cgrid,.add-grid,.svcshots';
+  var nodes = Array.prototype.slice.call(document.querySelectorAll(sels));
+  nodes.forEach(function(n){
+    if (n.closest('nav')) return;
+    n.setAttribute('data-rv','');
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var sibs = Array.prototype.slice.call(e.target.parentNode.children)
+                  .filter(function(c){return c.hasAttribute && c.hasAttribute('data-rv');});
+      var i = Math.min(sibs.indexOf(e.target), 5);
+      e.target.style.setProperty('--d', (i > 0 ? i * 70 : 0) + 'ms');
+      e.target.classList.add('rv-in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+
+  nodes.forEach(function(n){ io.observe(n); });
+
+  // anything already in view on load reveals immediately
+  requestAnimationFrame(function(){
+    nodes.forEach(function(n){
+      var r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { n.classList.add('rv-in'); io.unobserve(n); }
+    });
+  });
+
+  // fade out before same-site navigation
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (!href || href.charAt(0) === '#' || a.target === '_blank'
+        || href.indexOf('mailto:') === 0 || href.indexOf('http') === 0) return;
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return;
+    ev.preventDefault();
+    document.body.classList.add('pg-leaving');
+    setTimeout(function(){ window.location.href = href; }, 240);
+  });
+
+  // restore on back/forward
+  window.addEventListener('pageshow', function(){ document.body.classList.remove('pg-leaving'); });
+  window.addEventListener('popstate', function(){ document.body.classList.remove('pg-leaving'); });
+  // safety: if navigation stalls, bring the page back
+  window.addEventListener('beforeunload', function(){});
+})();
+</script>
+
 </body>
 </html>

@@ -64,6 +64,23 @@ header p{font-size:16.5px;color:var(--muted);line-height:1.6;margin:0;max-width:
 footer{padding:44px 0 72px}
 
 @media(max-width:900px){.extras{grid-template-columns:1fr}}@media(max-width:820px){.grid{grid-template-columns:1fr}}
+
+/* ---------- subtle page + scroll animation ---------- */
+@media(prefers-reduced-motion:no-preference){
+  /* page enters */
+  body{animation:pgIn .45s cubic-bezier(.22,.61,.36,1)}
+  @keyframes pgIn{from{opacity:0}to{opacity:1}}
+  /* leaving: fade the whole page before navigating */
+  body.pg-leaving{opacity:0;transition:opacity .26s ease}
+  /* elements reveal as they scroll in */
+  [data-rv]{opacity:0;transform:translateY(14px);
+    transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1);
+    transition-delay:var(--d,0ms)}
+  [data-rv].rv-in{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-rv]{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
@@ -92,7 +109,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Based on the reference you sent — floating pill header, heavy geometric type, big rounded cards, and marker-highlighted text. Warm marigold accent instead of the neon green. The most contemporary of the set.</p>
       <a class="open" href="f-hole.html">Open Direction A →</a>
       <div class="pages">
-        <a href="f-hole.html">Home</a><a href="f-hole-services.html">Packages</a><a href="f-hole-faq.html">FAQ</a><a href="f-hole-contact.html">Contact</a><a href="f-hole-book.html">Book</a>
+        <a href="f-hole.html">Home</a><a href="f-hole-setup.html">Setup</a><a href="f-hole-services.html">Packages</a><a href="f-hole-faq.html">FAQ</a><a href="f-hole-contact.html">Contact</a><a href="f-hole-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -111,7 +128,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Your green and gold pushed toward a private-club invitation. Full-bleed photo, classic serif, lots of room. Closest to what you have now.</p>
       <a class="open" href="a-the-club.html">Open Direction B →</a>
       <div class="pages">
-        <a href="a-the-club.html">Home</a><a href="a-the-club-services.html">Services</a><a href="a-the-club-faq.html">FAQ</a><a href="a-the-club-contact.html">Contact</a><a href="a-the-club-book.html">Book</a>
+        <a href="a-the-club.html">Home</a><a href="a-the-club-gallery.html">Gallery</a><a href="a-the-club-services.html">Services</a><a href="a-the-club-faq.html">FAQ</a><a href="a-the-club-contact.html">Contact</a><a href="a-the-club-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -130,7 +147,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Same palette, much bigger voice. Heavy display type and tighter cards. The best match for the humor already in your writing.</p>
       <a class="open" href="b-floodlight.html">Open Direction C →</a>
       <div class="pages">
-        <a href="b-floodlight.html">Home</a><a href="b-floodlight-services.html">Services</a><a href="b-floodlight-faq.html">FAQ</a><a href="b-floodlight-contact.html">Contact</a><a href="b-floodlight-book.html">Book</a>
+        <a href="b-floodlight.html">Home</a><a href="b-floodlight-gallery.html">Gallery</a><a href="b-floodlight-services.html">Services</a><a href="b-floodlight-faq.html">FAQ</a><a href="b-floodlight-contact.html">Contact</a><a href="b-floodlight-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -149,7 +166,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Cream and sage leading instead of the dark green. Light, uncluttered, easiest to scan. Widest appeal of the four.</p>
       <a class="open" href="c-clubhouse.html">Open Direction D →</a>
       <div class="pages">
-        <a href="c-clubhouse.html">Home</a><a href="c-clubhouse-services.html">Services</a><a href="c-clubhouse-faq.html">FAQ</a><a href="c-clubhouse-contact.html">Contact</a><a href="c-clubhouse-book.html">Book</a>
+        <a href="c-clubhouse.html">Home</a><a href="c-clubhouse-gallery.html">Gallery</a><a href="c-clubhouse-services.html">Services</a><a href="c-clubhouse-faq.html">FAQ</a><a href="c-clubhouse-contact.html">Contact</a><a href="c-clubhouse-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -168,7 +185,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Drops the golf colors entirely. Off-white, near-black, thin rules, one sharp accent. The only one that doesn't look like every other golf site.</p>
       <a class="open" href="d-range.html">Open Direction E →</a>
       <div class="pages">
-        <a href="d-range.html">Home</a><a href="d-range-services.html">Services</a><a href="d-range-faq.html">FAQ</a><a href="d-range-contact.html">Contact</a><a href="d-range-book.html">Book</a>
+        <a href="d-range.html">Home</a><a href="d-range-gallery.html">Gallery</a><a href="d-range-services.html">Services</a><a href="d-range-faq.html">FAQ</a><a href="d-range-contact.html">Contact</a><a href="d-range-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -187,7 +204,7 @@ footer{padding:44px 0 72px}
       <p class="desc">Built around when these events actually happen — after dark. Twilight navy, string-light amber, and the glow of the screen. A ball-flight tracer arcs across the hero.</p>
       <a class="open" href="e-nightrange.html">Open Direction F →</a>
       <div class="pages">
-        <a href="e-nightrange.html">Home</a><a href="e-nightrange-services.html">Services</a><a href="e-nightrange-faq.html">FAQ</a><a href="e-nightrange-contact.html">Contact</a><a href="e-nightrange-book.html">Book</a>
+        <a href="e-nightrange.html">Home</a><a href="e-nightrange-gallery.html">Gallery</a><a href="e-nightrange-services.html">Services</a><a href="e-nightrange-faq.html">FAQ</a><a href="e-nightrange-contact.html">Contact</a><a href="e-nightrange-book.html">Book</a>
       </div>
     </div>
   </div>
@@ -226,6 +243,65 @@ footer{padding:44px 0 72px}
 </div>
 
 <footer><div class="wrap"></div></footer>
+
+
+<script>
+(function(){
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.matches) return;
+
+  // stagger reveals within each section
+  var sels = '.sec-head,.sec-h,.center,.spec,.stat,.fcard,.pkg,.prow,.crow,.stp,.step,'
+           + '.addon,.add,.ic,.bt,.gs,.qa details,.ccard,.tile,.herocontent,.bkside,.bkform,'
+           + '.ptable,.card-list,.pkg-list,.steps,.feat,.bento,.galgrid,.cgrid,.add-grid,.svcshots';
+  var nodes = Array.prototype.slice.call(document.querySelectorAll(sels));
+  nodes.forEach(function(n){
+    if (n.closest('nav')) return;
+    n.setAttribute('data-rv','');
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var sibs = Array.prototype.slice.call(e.target.parentNode.children)
+                  .filter(function(c){return c.hasAttribute && c.hasAttribute('data-rv');});
+      var i = Math.min(sibs.indexOf(e.target), 5);
+      e.target.style.setProperty('--d', (i > 0 ? i * 70 : 0) + 'ms');
+      e.target.classList.add('rv-in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+
+  nodes.forEach(function(n){ io.observe(n); });
+
+  // anything already in view on load reveals immediately
+  requestAnimationFrame(function(){
+    nodes.forEach(function(n){
+      var r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { n.classList.add('rv-in'); io.unobserve(n); }
+    });
+  });
+
+  // fade out before same-site navigation
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (!href || href.charAt(0) === '#' || a.target === '_blank'
+        || href.indexOf('mailto:') === 0 || href.indexOf('http') === 0) return;
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return;
+    ev.preventDefault();
+    document.body.classList.add('pg-leaving');
+    setTimeout(function(){ window.location.href = href; }, 240);
+  });
+
+  // restore on back/forward
+  window.addEventListener('pageshow', function(){ document.body.classList.remove('pg-leaving'); });
+  window.addEventListener('popstate', function(){ document.body.classList.remove('pg-leaving'); });
+  // safety: if navigation stalls, bring the page back
+  window.addEventListener('beforeunload', function(){});
+})();
+</script>
 
 </body>
 </html>

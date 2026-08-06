@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mobile Golf Simulator Rental | Raleigh &amp; The Triangle — 919 Golf Co.</title>
+<title>Gallery — 919 Golf Co.</title>
 <meta name="description" content="Mobile golf simulator rental for weddings, corporate events, and tailgates across Raleigh, Durham, and the Triangle. Tour-level tech, setup to teardown handled.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,6 +131,51 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
   .galgrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}
 }
 
+/* --- subpages --- */
+.phead{background:var(--night-2);border-bottom:1px solid rgba(241,238,231,.1);padding:76px 0 64px}
+.phead h1{font-size:clamp(38px,5.6vw,72px);margin:14px 0 16px}
+.phead p{color:var(--bone-dim);font-size:17px;max-width:56ch}
+.pbody,.bk{padding:84px 0}
+.qa{border-top:1px solid rgba(241,238,231,.14)}
+.qa details{border-bottom:1px solid rgba(241,238,231,.14)}
+.qa summary{cursor:pointer;list-style:none;padding:26px 0;font-family:var(--disp);font-size:26px;text-transform:uppercase;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';color:var(--amber);font-size:24px;font-family:var(--body);flex-shrink:0;transition:.2s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 0 26px;color:var(--bone-dim);font-size:16px;line-height:1.75;max-width:74ch}
+.ptable{border-top:1px solid rgba(241,238,231,.14)}
+.prow{display:grid;grid-template-columns:.1fr .3fr .38fr .22fr;gap:26px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(241,238,231,.14)}
+.prow .i{font-family:var(--mono);font-size:11px;color:var(--glow)}
+.prow h3{font-family:var(--disp);font-size:32px;text-transform:uppercase}
+.prow .d{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;color:var(--amber);margin-top:7px}
+.prow p{font-size:15px;color:var(--bone-dim)}
+.prow .r{text-align:right;font-family:var(--mono);font-size:10.5px;color:var(--bone-dim)}
+.svcshots{margin:0 0 56px}.svcshots .ss{aspect-ratio:21/7;background:var(--night-3);border:1px dashed rgba(143,200,232,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--bone-dim)}
+.svcshots .ss span{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
+.ccard{background:var(--night-2);border:1px solid rgba(241,238,231,.12);padding:36px 32px}
+.ccard h3{font-family:var(--disp);font-size:28px;text-transform:uppercase;margin-bottom:12px}
+.ccard p{color:var(--bone-dim);font-size:15.5px}
+.ccard a{color:var(--amber)}
+.bkgrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:start}
+.bkside h2{font-family:var(--disp);font-size:32px;text-transform:uppercase;margin-bottom:16px}
+.bkside p{color:var(--bone-dim);font-size:16px;margin-bottom:26px}
+.bklist{list-style:none;padding:0;margin:0;border-top:1px solid rgba(241,238,231,.14)}
+.bklist li{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid rgba(241,238,231,.14);font-size:15px;color:var(--bone-dim)}
+.bklist svg{color:var(--amber);flex-shrink:0;margin-top:3px}
+.bkform{background:var(--night-2);border:1px solid rgba(241,238,231,.12);padding:42px 38px}
+.bkform h3{font-family:var(--disp);font-size:30px;text-transform:uppercase;margin-bottom:8px}
+.bkform .sub{color:var(--bone-dim);font-size:15px;margin-bottom:30px}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.f-full{grid-column:span 4}.f-half{grid-column:span 2}.f-quarter{grid-column:span 1}
+.fgrid label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:7px}
+.fgrid label .req{color:var(--amber)}
+input,textarea{width:100%;padding:12px 14px;border:1px solid rgba(241,238,231,.16);font:inherit;font-size:14.5px;background:var(--night);color:var(--bone)}
+input:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:-1px}
+textarea{min-height:112px;resize:vertical}
+.fnote{font-size:12.5px;color:var(--bone-dim);margin-top:22px;line-height:1.7}
+@media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid,.bkgrid{grid-template-columns:1fr}.f-half,.f-quarter{grid-column:span 4}}
+
 /* --- responsive nav --- */
 nav{position:sticky;top:0}
 .navtoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
@@ -194,90 +239,17 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 </style>
 </head>
 <body>
-
 <nav><div class="wrap">
   <a href="e-nightrange.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div></a>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="e-nightrange-gallery.html">Gallery</a></li><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
   <a href="e-nightrange-book.html" class="btn btn-amber" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
-
-<header class="hero">
-  <svg class="tracer" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M -40 660 C 300 640, 620 300, 900 150 S 1300 20, 1460 40"/>
-    <circle cx="1440" cy="42" r="5"/>
-  </svg>
-  <div class="wrap">
-    <div>
-      <div class="eyebrow">Raleigh · Durham · The Triangle, NC</div>
-      <h1>Mobile Golf<br>Simulator Rental</h1>
-      <div class="tag">Elevate your event, one swing at a time.</div>
-      <p class="lede">Tour-level tracking, a 17×15ft enclosure, and a 4K screen — delivered to weddings, corporate events, and tailgates. We handle setup to teardown.</p>
-      <div class="hero-actions">
-        <a href="#cta" class="btn btn-amber">Get a Quote</a>
-        <a href="#pkgs" class="btn btn-ghost">See Packages</a>
-      </div>
-      <div class="hero-trust">
-        <span>Setup &amp; teardown included</span><span>Attendant all event</span><span>Quote in 1–2 days</span>
-      </div>
-    </div>
-    <div class="shot"></div>
-  </div>
-</header>
-
-<div class="readout"><div class="wrap">
-  <div class="rd"><div class="k">Enclosure</div><div class="v">17×15 FT</div><p>Spacious inflatable enclosure. Because every golfer needs a little space.</p></div>
-  <div class="rd"><div class="k">Launch Monitor</div><div class="v">GC3</div><p>Camera-based tracking that captures every stripe and slice.</p></div>
-  <div class="rd"><div class="k">Projection</div><div class="v">4K</div><p>Crystal-clear visuals. Because why the heck not.</p></div>
-</div></div>
-
-<section id="pkgs"><div class="wrap">
-  <div class="sec-head">
-    <div class="eyebrow">Packages for every golfer</div>
-    <h2>Pick your <em>format</em>.</h2>
-    <p>Three ways to bring the course to your guests. Every package includes delivery, setup, an attendant for the full event, and teardown.</p>
-  </div>
-  <div class="card-list">
-    <div class="crow">
-      <div class="h">01</div>
-      <div><h3>Tee Time</h3><div class="d">Hourly · 2 hour minimum</div></div>
-      <p>Perfect for weeknight events, tailgates, and backyard get-togethers.</p>
-      <div class="r"><a href="#cta" class="btn btn-ghost">Inquire</a></div>
-    </div>
-    <div class="crow">
-      <div class="h">02</div>
-      <div><h3>Scramble<span class="pop">Most Popular</span></h3><div class="d">Half-day rental</div></div>
-      <p>The go-to package for weddings, parties, and all other private events.</p>
-      <div class="r"><a href="#cta" class="btn btn-amber">Inquire</a></div>
-    </div>
-    <div class="crow">
-      <div class="h">03</div>
-      <div><h3>Invitational</h3><div class="d">6–8 hour rental</div></div>
-      <p>Great for corporate events, fundraisers, festivals, and all-day events.</p>
-      <div class="r"><a href="#cta" class="btn btn-ghost">Inquire</a></div>
-    </div>
-  </div>
+<header class="phead"><div class="wrap"><div class="eyebrow">See it in person</div><h1>The setup.</h1><p>Tour-level technology, a spacious enclosure, and a whole lot of people waiting for their turn.</p></div></header>
+<section class="gal" id="gallery" style="border-top:none"><div class="wrap">
+  <div class="galgrid"><div class="gs big filled"><img src="img/hero-sim.jpg" alt="919 Golf Co. simulator setup"></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guest mid-swing</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Group watching &amp; reacting</span></div><div class="gs wide "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>The enclosure, lit</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>GC3 launch monitor</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Clubs &amp; hitting mat</span></div></div>
+  <p style="margin-top:22px;font-size:12.5px;color:var(--bone-dim)">Two slots reserved — this grid grows as more photos come in.</p>
 </div></section>
-
-<section id="how" style="padding-top:0"><div class="wrap">
-  <div class="sec-head">
-    <div class="eyebrow">How it works</div>
-    <h2>Way easier than picking out your <em>new driver</em>.</h2>
-  </div>
-  <div class="steps">
-    <div class="stp"><div class="n">01 / Reach out</div><h3>Tell us about it</h3><p>Send your date, location, and rough guest count. We come back with a custom quote within 1–2 days.</p></div>
-    <div class="stp"><div class="n">02 / Lock it in</div><h3>Reserve the date</h3><p>A simple agreement and a deposit hold your spot. It counts toward your total, and the balance is due 7 days prior.</p></div>
-    <div class="stp"><div class="n">03 / Play</div><h3>Leave the rest to us</h3><p>We arrive early, set up, run the simulator all event, and break it down after. You just kick back and enjoy.</p></div>
-  </div>
-</div></section>
-
-<section class="cta" id="cta"><div class="wrap">
-  <div class="eyebrow">Get a quote today</div>
-  <h2>Let's make your event one to remember.</h2>
-  <p>Fill out a brief inquiry and we'll come back with custom pricing and availability.</p>
-  <a href="#" class="btn btn-amber" style="padding:17px 40px">Request a Quote</a>
-</div></section>
-
 <footer><div class="wrap">
   <div>© 2026 919 Golf Co. — Locally owned, serving the Triangle &amp; NC</div>
   <div style="display:flex;gap:18px;align-items:center">
@@ -288,9 +260,7 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
     </div>
   </div>
 </div></footer>
-
-<a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#F1EEE7;color:#0C1826;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.4)">← All directions</a>
-
+<a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#141414;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.3)">← All directions</a>
 
 <script>
 (function(){

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Book Now — 919 Golf Co.</title>
+<title>Gallery — 919 Golf Co.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -119,25 +119,31 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .photo-slot{aspect-ratio:16/10}
 }
 
-.bk{padding:88px 0}
-.bkgrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:start}
-.bkside h2{font-size:32px;margin-bottom:16px}
-.bkside p{color:var(--grey);font-size:16px;margin-bottom:26px}
-.bklist{list-style:none;padding:0;margin:0}
-.bklist li{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;color:var(--grey)}
-.bklist svg{color:var(--lime);flex-shrink:0;margin-top:3px}
-.bkform{background:var(--char);border:1px solid rgba(255,255,255,.11);border-radius:18px;padding:44px 38px}
-.bkform h3{font-size:28px;margin-bottom:8px}
-.bkform .sub{color:var(--grey);font-size:15px;margin-bottom:30px}
-.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.f-full{grid-column:span 4}.f-half{grid-column:span 2}.f-quarter{grid-column:span 1}
-.fgrid label{display:block;font-size:12px;font-weight:700;margin-bottom:7px;letter-spacing:.04em}
-.fgrid label .req{color:var(--lime)}
-input,textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.14);border-radius:8px;font:inherit;font-size:14.5px;background:var(--black);color:var(--white)}
-input:focus,textarea:focus{outline:2px solid var(--lime);outline-offset:-1px}
-textarea{min-height:112px;resize:vertical}
-.fnote{font-size:12.5px;color:var(--grey);margin-top:22px;line-height:1.7}
-@media(max-width:900px){.bkgrid{grid-template-columns:1fr}.f-half,.f-quarter{grid-column:span 4}}
+/* --- subpages --- */
+.phead{background:var(--char);border-bottom:1px solid rgba(255,255,255,.08);padding:84px 0 72px}
+.phead h1{font-size:clamp(38px,5.4vw,66px);margin:14px 0 16px}
+.phead p{color:var(--grey);font-size:18px;max-width:56ch}
+.pbody{padding:88px 0}
+.qa{border-top:1px solid rgba(255,255,255,.1)}
+.qa details{border-bottom:1px solid rgba(255,255,255,.1)}
+.qa summary{cursor:pointer;list-style:none;padding:26px 0;font-family:var(--disp);font-size:19px;text-transform:uppercase;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';color:var(--lime);font-size:26px;flex-shrink:0;transition:.2s;font-family:var(--body)}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 0 26px;color:var(--grey);font-size:16px;line-height:1.75;max-width:74ch}
+.ptable{border-top:1px solid rgba(255,255,255,.1)}
+.prow{display:grid;grid-template-columns:.1fr .3fr .38fr .22fr;gap:26px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.prow .i{font-family:var(--disp);color:var(--lime);font-size:14px}
+.prow h3{font-size:29px}
+.prow .d{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-top:6px;font-family:var(--body);font-weight:700}
+.prow p{font-size:15px;color:var(--grey)}
+.prow .r{text-align:right;font-size:13px;color:var(--grey)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:14px}
+.ccard{background:var(--char);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:38px 32px}
+.ccard h3{font-size:25px;margin-bottom:12px}
+.ccard p{color:var(--grey);font-size:15.5px}
+.ccard a{color:var(--lime);font-weight:700}
+@media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid{grid-template-columns:1fr}}
 .soc{display:flex;gap:10px}.soc a{width:36px;height:36px;border:1px solid rgba(250,237,215,.2);border-radius:100px;display:flex;align-items:center;justify-content:center;color:var(--white);transition:.2s}.soc a:hover{border-color:var(--lime);color:var(--lime)}.soc svg{width:17px;height:17px}
 /* --- responsive nav --- */
 nav{position:sticky;top:0}
@@ -213,39 +219,23 @@ label.hamb{margin:0!important;font-size:0;line-height:0}
 <nav><div class="wrap">
   <div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
-  <ul class="navlinks"><li><a href="b-floodlight.html">Home</a></li><li><a href="b-floodlight-gallery.html">Gallery</a></li><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html">FAQ</a></li><li><a href="b-floodlight-contact.html">Contact</a></li><li><a href="b-floodlight-book.html">Book</a></li></ul>
+  <ul class="navlinks"><li><a href="b-floodlight-gallery.html">Gallery</a></li><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html">FAQ</a></li><li><a href="b-floodlight-contact.html">Contact</a></li><li><a href="b-floodlight-book.html">Book</a></li></ul>
   <a href="b-floodlight-book.html" class="btn btn-lime" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 <header class="phead"><div class="wrap">
-  <div class="eyebrow">Book now</div>
-  <h1>Get a quote today.</h1>
-  <p>Fill out a brief inquiry and we'll come back with custom pricing and availability — usually within 1–2 days.</p>
+  <div class="eyebrow">See it in person</div>
+  <h1>The setup.</h1>
+  <p>Tour-level technology, a spacious enclosure, and a whole lot of people waiting for their turn.</p>
 </div></header>
-<section class="bk"><div class="wrap"><div class="bkgrid">
-  <div class="bkside">
-    <h2>What happens next</h2>
-    <p>No pressure and no obligation — an inquiry just starts the conversation.</p>
-    <ul class="bklist">
-      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>We reply in 1–2 days</b> with custom pricing for your date and location.</span></li>
-      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>A 50% deposit</b> holds your date for the Tee Time and Scramble packages, 25% for the Invitational.</span></li>
-      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Your deposit counts</b> toward the total. The balance is due 7 days before the event.</span></li>
-      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Free rescheduling</b> if the weather doesn't cooperate.</span></li>
-      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>We handle everything</b> — delivery, setup, an attendant for the full event, and teardown.</span></li>
-    </ul>
-  </div>
-  <div class="bkform">
-    <h3>Event inquiry</h3>
-    <div class="sub">Tell us about your event and we'll reach out shortly with custom pricing and availability.</div>
-    <div class="fgrid"><div class="f-half"><label>Full name <span class="req">*</span></label><input type="text" placeholder="First & Last Name" disabled></div><div class="f-half"><label>Email <span class="req">*</span></label><input type="email" placeholder="Enter your email address" disabled></div><div class="f-full"><label>Phone number <span class="req">*</span></label><input type="tel" placeholder="E.g. 541 444 0755" disabled></div><div class="f-full"><label>Event address <span class="req">*</span></label><input type="text" placeholder="E.g. 6508 Caverstone Dr, Durham NC 27713" disabled></div><div class="f-quarter"><label>Start date <span class="req">*</span></label><input type="text" placeholder="MM/DD/YYYY" disabled></div><div class="f-quarter"><label>Start time <span class="req">*</span></label><input type="text" placeholder="HH:MM" disabled></div><div class="f-quarter"><label>End date <span class="req">*</span></label><input type="text" placeholder="MM/DD/YYYY" disabled></div><div class="f-quarter"><label>End time <span class="req">*</span></label><input type="text" placeholder="HH:MM" disabled></div><div class="f-full"><label>How did you hear about us? </label><input type="text" placeholder="E.g. Google, Instagram, word of mouth" disabled></div><div class="f-full"><label>Additional booking information — questions, concerns, special accommodations</label><textarea placeholder="Type answer here" disabled></textarea></div></div>
-    <div style="margin-top:26px"><a href="#" class="btn btn-lime" style="padding:15px 34px">Submit inquiry</a></div>
-    <div class="fnote"><b>Design preview.</b> On the live site this is replaced by the HoneyBook inquiry form, which handles the contract, deposit, and payment. Fields shown match the real form and are intentionally not wired up here.</div>
-  </div>
-</div></div></section>
+<section class="gal" id="gallery" style="border-top:none"><div class="wrap">
+  <div class="galgrid"><div class="gs big filled"><img src="img/hero-sim.jpg" alt="919 Golf Co. simulator setup"></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guest mid-swing</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Group watching &amp; reacting</span></div><div class="gs wide "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>The enclosure, lit</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>GC3 launch monitor</span></div><div class="gs  "><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Clubs &amp; hitting mat</span></div></div>
+  <p style="margin-top:22px;font-size:13px;opacity:.65">Two slots reserved — this grid grows as more photos come in.</p>
+</div></section>
 <footer><div class="wrap">
   <div>© 2026 919 Golf Co. · Raleigh · Durham · The Triangle, NC</div>
   <div><a href="mailto:info@919golfco.com" style="text-decoration:none">info@919golfco.com</a></div><div class="soc"><a href="https://www.instagram.com/919golfco/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61590585927927" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V11H5.5v4H8v7h4v-7h3l1-4h-4V7.5a1 1 0 0 1 1-1H16z"/></svg></a></div>
 </div></footer>
-<a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#141414;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.28)">← All directions</a>
+<a href="index.html" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#141414;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.3)">← All directions</a>
 
 <script>
 (function(){
