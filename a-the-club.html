@@ -151,7 +151,6 @@ nav{position:sticky;top:0}
   nav .btn{padding:11px 16px;font-size:12px;order:8;white-space:nowrap;margin-left:auto}
   .logo img{height:28px}
 }
-@media(max-width:380px){ nav .btn{display:none} }
 
 /* --- compact nav: swap to the mark, never let the CTA wrap --- */
 .brand .mark,.logo .mark{display:none}
@@ -160,13 +159,17 @@ nav .btn,.navcta{white-space:nowrap}
 
 /* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
 .qarrow{display:none;width:15px;height:15px}
+.qshort{display:none}
 @media(max-width:432px){
-  nav .btn .qtxt{display:none}
-  nav .btn .qarrow{display:block}
-  nav .btn{padding:0!important;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
-  .navcta span{display:none}
-  .navcta{padding:4px;border:none;background:transparent}
-  .brand .lockup,.logo .lockup{max-width:150px}
+  nav .btn .qtxt,.navcta .qtxt{display:none}
+  nav .btn .qshort,.navcta .qshort{display:inline}
+  nav .btn{padding:10px 16px}
+  .navcta{padding:5px 5px 5px 15px}
+  .navcta .arrow{width:28px;height:28px}
+}
+/* tier-3: no room for a labelled button — drop it, keep the wordmark */
+@media(max-width:364px){
+  nav .btn,.navcta{display:none}
 }
 </style>
 </head>
@@ -176,7 +179,7 @@ nav .btn,.navcta{white-space:nowrap}
   <div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="#gallery">Gallery</a></li><li><a href="a-the-club-services.html">Services</a></li><li><a href="a-the-club-faq.html">FAQ</a></li><li><a href="a-the-club-contact.html">Contact</a></li><li><a href="a-the-club-book.html">Book</a></li></ul>
-  <a href="a-the-club-book.html" class="btn btn-gold" aria-label="Request a Quote"><span class="qtxt">Request a Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+  <a href="a-the-club-book.html" class="btn btn-gold" aria-label="Request a Quote"><span class="qtxt">Request a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 
 <header class="hero"><div class="wrap">

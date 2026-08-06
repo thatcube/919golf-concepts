@@ -198,7 +198,6 @@ nav{position:sticky;top:0}
   nav .btn{padding:11px 16px;font-size:12px;order:8;white-space:nowrap;margin-left:auto}
   .logo img{height:28px}
 }
-@media(max-width:380px){ nav .btn{display:none} }
 
 /* --- compact nav: swap to the mark, never let the CTA wrap --- */
 .brand .mark,.logo .mark{display:none}
@@ -207,13 +206,17 @@ nav .btn,.navcta{white-space:nowrap}
 
 /* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
 .qarrow{display:none;width:15px;height:15px}
+.qshort{display:none}
 @media(max-width:429px){
-  nav .btn .qtxt{display:none}
-  nav .btn .qarrow{display:block}
-  nav .btn{padding:0!important;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
-  .navcta span{display:none}
-  .navcta{padding:4px;border:none;background:transparent}
-  .brand .lockup,.logo .lockup{max-width:150px}
+  nav .btn .qtxt,.navcta .qtxt{display:none}
+  nav .btn .qshort,.navcta .qshort{display:inline}
+  nav .btn{padding:10px 16px}
+  .navcta{padding:5px 5px 5px 15px}
+  .navcta .arrow{width:28px;height:28px}
+}
+/* tier-3: no room for a labelled button — drop it, keep the wordmark */
+@media(max-width:375px){
+  nav .btn,.navcta{display:none}
 }
 </style>
 </head>
@@ -222,7 +225,7 @@ nav .btn,.navcta{white-space:nowrap}
   <a href="e-nightrange.html" style="text-decoration:none"><div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co." class="lockup"><img src="logo/919-round-icon-cream.svg" alt="" class="mark" aria-hidden="true"></div></a>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="e-nightrange.html">Home</a></li><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
-  <a href="e-nightrange-book.html" class="btn btn-amber" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+  <a href="e-nightrange-book.html" class="btn btn-amber" aria-label="Get a Quote"><span class="qtxt">Get a Quote</span><span class="qshort">Quote</span><svg class="qarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div></nav>
 <header class="phead"><div class="wrap"><div class="eyebrow">Frequently asked</div><h1>Your questions, answered.</h1><p>Everything people usually ask before booking. Still unsure about something? Just reach out.</p></div></header>
 <section class="pbody"><div class="wrap"><div class="qa"><details><summary>What's included?</summary><div class="ans">We set up and tear down before and after the event. We also provide an attendant for the full duration to make sure everything runs smoothly. Adult right- and left-handed clubs are provided, plus a youth set for our young golf prodigies.</div></details><details><summary>What courses and game modes are available?</summary><div class="ans">Through GSPro software, guests can play dozens of the world's most famous courses — including Pebble Beach, St. Andrews, TPC Sawgrass, and Augusta National. Game modes include stroke play, closest-to-pin, longest drive, and custom scramble formats. Our attendant will help set up whichever format works best for your group.</div></details><details><summary>What is your cancellation policy?</summary><div class="ans">Cancellations 14 or more business days before the event are 100% refundable. Between 7 and 14 days prior, you receive a 50% refund with the remaining 50% credited toward a future booking. Within 7 days of the event, you receive 100% credit toward your next booking.</div></details><details><summary>What happens if the weather is bad?</summary><div class="ans">Our simulators are weather permitting, as rain and severe weather can damage the equipment. If conditions aren't suitable we'll gladly reschedule at no additional cost. We can also set up indoors, provided the space fits our footprint of 17'W × 15'L × 10'H.</div></details><details><summary>Do you require a deposit?</summary><div class="ans">A 50% deposit is required for The Tee Time and The Scramble. The Invitational requires 25%. Your deposit locks in the date and counts toward your total.</div></details><details><summary>How can we get in touch?</summary><div class="ans">Every inquiry is followed up with a call, text, or email as soon as possible. Don't feel like filling out a form? Just send us an email with your contact information and we'll respond as quickly as we can.</div></details><details><summary>Why 919 Golf Co. instead of a big franchise?</summary><div class="ans">As a locally owned small business, we take pride in serving the Triangle. From your first inquiry to the final swing, we're committed to clear communication, reliable service, and a seamless setup. We're not a faceless rental company — we're your neighbors, and every event matters to us.</div></details></div></div></section>
