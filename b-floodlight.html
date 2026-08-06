@@ -22,7 +22,7 @@ h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:.94;letter-spacing:
 p{line-height:1.65;margin:0}
 .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--lime)}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(11,13,12,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav{position:sticky;top:0;z-index:50;background:rgba(22,54,45,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(250,237,215,.12)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
 .logo img{height:38px;width:auto;display:block}
 .logo span{color:var(--lime)}
@@ -38,17 +38,20 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:8
 /* HERO */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(200,240,74,.16) 0%,transparent 62%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2;padding:96px 32px 0;text-align:center}
-.hero h1{font-size:clamp(52px,9.5vw,142px);margin:26px 0 0}
-.hero h1 .out{-webkit-text-stroke:2px var(--lime);color:transparent}
-.hero p.lede{font-size:18px;color:var(--grey);max-width:58ch;margin:30px auto 36px;line-height:1.7}
-.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:72px}
-.photo-slot{aspect-ratio:21/9;border:2px dashed rgba(200,240,74,.35);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--char);margin-bottom:-70px;position:relative;z-index:3}
+.hero .wrap{position:relative;z-index:2;padding:64px 32px 72px;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(40px,4.9vw,68px);margin:18px 0 0}
+.hero h1 .out{-webkit-text-stroke:1.5px var(--lime);color:transparent}
+.hero p.lede{font-size:17px;color:var(--grey);max-width:46ch;margin:22px 0 30px;line-height:1.7}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-trust{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--grey);align-items:center}
+.hero-trust span{display:flex;align-items:center;gap:7px}
+.hero-trust svg{color:var(--lime);flex-shrink:0}
+.photo-slot{aspect-ratio:4/3;border-radius:16px;background:url(img/hero-sim.jpg) center/cover;position:relative;z-index:3;box-shadow:0 24px 60px rgba(0,0,0,.4)}
 .photo-slot svg{color:var(--lime);opacity:.55}
 .photo-slot span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);text-align:center;line-height:1.8;font-weight:600}
 
 /* EVENT TAGS */
-.tags{background:var(--lime);color:var(--black);margin-top:70px;padding:26px 0}
+.tags{background:var(--lime);color:var(--black);padding:22px 0}
 .tags .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .tags span{font-family:var(--disp);font-size:13px;text-transform:uppercase;letter-spacing:.04em;border:2px solid rgba(11,13,12,.28);padding:8px 18px;border-radius:100px}
 
@@ -128,14 +131,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Mobile Golf Simulator · The Triangle, NC</div>
-  <h1>Elevate Your Event.<br><span class="out">One Swing</span> At A Time.</h1>
-  <p class="lede">We bring the excitement of the golf course directly to your guests — an interactive experience that sparks competition, conversation, and lasting memories.</p>
-  <div class="hero-actions">
-    <a href="#cta" class="btn btn-lime">Get a Quote</a>
-    <a href="#pkgs" class="btn btn-ghost">See Packages</a>
+  <div>
+    <div class="eyebrow">Mobile Golf Simulator · The Triangle, NC</div>
+    <h1>Elevate Your Event.<br><span class="out">One Swing</span> At A Time.</h1>
+    <p class="lede">We bring the golf course directly to your guests — competition, conversation, and a line of people waiting for another swing.</p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn btn-lime">Get a Quote</a>
+      <a href="#pkgs" class="btn btn-ghost">See Packages</a>
+    </div>
+    <div class="hero-trust">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Setup &amp; teardown included</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Quote in 1–2 days</span>
+    </div>
   </div>
-  <div class="photo-slot" style="border:none;background:url(img/hero-sim.jpg) center/cover;border-radius:14px"></div>
+  <div class="photo-slot"></div>
 </div></header>
 
 <div class="tags"><div class="wrap">
