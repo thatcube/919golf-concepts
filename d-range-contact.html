@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>919 Golf Co. — Direction D: Range</title>
+<title>Contact — 919 Golf Co.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
@@ -113,104 +113,73 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
   .add{padding:24px 0!important;border-left:none!important}
   .cta .wrap{grid-template-columns:1fr}
 }
+
+/* --- subpages --- */
+.phead{border-bottom:1px solid var(--line);padding:72px 0 56px}
+.phead h1{font-size:clamp(38px,5.4vw,72px);max-width:16ch;margin:16px 0 14px}
+.phead p{font-size:17.5px;max-width:52ch}
+.pbody{padding:80px 0}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;padding:26px 0;font-family:var(--disp);font-size:20px;font-weight:600;letter-spacing:-.03em;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';color:var(--ink-2);font-size:24px;flex-shrink:0;transition:.2s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 0 26px;font-size:16px;line-height:1.75;max-width:74ch}
+.ptable{border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:.1fr .3fr .38fr .22fr;gap:26px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);transition:.2s}
+.prow:hover{background:var(--paper-2)}
+.prow .i{font-family:var(--disp);color:var(--ink-2);font-size:13px;font-weight:500}
+.prow h3{font-size:28px}
+.prow .d{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:6px;font-weight:600}
+.prow p{font-size:15px}
+.prow .r{text-align:right;font-size:13px;color:var(--ink-2)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);margin-top:14px}
+.ccard{padding:38px 34px 38px 0;border-bottom:1px solid var(--line)}
+.ccard:nth-child(even){padding-left:34px;border-left:1px solid var(--line)}
+.ccard h3{font-size:24px;margin-bottom:12px}
+.ccard p{font-size:15.5px}
+.ccard a{color:var(--ink);font-weight:600}
+@media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid{grid-template-columns:1fr}.ccard{padding:30px 0!important;border-left:none!important}}
 </style>
 </head>
 <body>
-
 <nav><div class="wrap">
-  <div class="logo"><img src="logo/919-lockup-h-black.svg" alt="919 Golf Co."></div>
-  <ul class="navlinks"><li><a href="d-range-services.html">Services</a></li><li><a href="d-range-faq.html">FAQ</a></li><li><a href="d-range-contact.html">Contact</a></li></ul>
+  <a href="d-range.html" style="text-decoration:none"><div class="logo"><img src="logo/919-lockup-h-black.svg" alt="919 Golf Co."></div></a>
+  <ul class="navlinks"><li><a href="d-range-services.html">Services</a></li><li><a href="d-range-faq.html">FAQ</a></li><li><a href="d-range-contact.html" style="opacity:1;font-weight:700">Contact</a></li></ul>
   <a href="#cta" class="btn btn-solid">Get a Quote</a>
 </div></nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Mobile Golf Simulator — The Triangle, NC</div>
-    <h1 style="margin-top:22px">Elevate your event, one swing at a time.</h1>
-    <div class="row">
-      <p class="lede">We bring the golf course directly to your guests — competition, conversation, and a line of people waiting for another swing.</p>
-      <div class="hero-actions">
-        <a href="#cta" class="btn btn-solid">Get a Quote</a>
-        <a href="#pkgs" class="btn btn-line">See Packages</a>
-      </div>
+<header class="phead"><div class="wrap">
+  <div class="eyebrow">Get in touch</div>
+  <h1>Let's talk about your event.</h1>
+  <p>Have a question, or ready for a quote? Here's how to reach us.</p>
+</div></header>
+<section class="pbody"><div class="wrap">
+  <div class="cgrid">
+    <div class="ccard">
+      <h3>Request a quote</h3>
+      <p>Send over your date, location, and rough guest count and we'll come back with custom pricing and availability — usually within 1–2 days.</p>
+      <p style="margin-top:20px"><a href="#">Start an inquiry →</a></p>
     </div>
-  </div>
-  <div class="shot"></div>
-</header>
-
-<div class="specbar"><div class="wrap">
-  <div class="sb"><div class="k">Enclosure</div><div class="v">17 × 15 ft</div><p>Spacious inflatable enclosure. Because every golfer needs a little space.</p></div>
-  <div class="sb"><div class="k">Launch Monitor</div><div class="v">GC3</div><p>Camera-based tracking that captures every stripe and slice.</p></div>
-  <div class="sb"><div class="k">Projector</div><div class="v">4K</div><p>Crystal-clear visuals. Because why the heck not.</p></div>
-</div></div>
-
-<section id="pkgs"><div class="wrap">
-  <div class="sec-head">
-    <div class="l"><h2>Packages</h2></div>
-    <div class="r"><p>Three ways to bring the course to your guests. Every package includes delivery, setup, an attendant for the full event, and teardown — you don't touch a thing.</p></div>
-  </div>
-  <div class="pkg-list">
-    <div class="pkg">
-      <div class="idx">01</div>
-      <div><h3>Tee Time</h3><div class="dur">Hourly · 2 hour minimum</div></div>
-      <p>Perfect for weeknight events, tailgates, and backyard get-togethers.</p>
-      <div class="act"><a href="#cta" class="btn btn-line">Inquire</a></div>
+    <div class="ccard">
+      <h3>Send an email</h3>
+      <p>Prefer to just write to us? Email <a href="mailto:info@919golfco.com">info@919golfco.com</a> with any questions and a team member will reach out within 24–48 hours.</p>
     </div>
-    <div class="pkg">
-      <div class="idx">02</div>
-      <div><h3>Scramble<span class="pop">Most Popular</span></h3><div class="dur">Half-day rental</div></div>
-      <p>The go-to package for weddings, parties, and all other private events.</p>
-      <div class="act"><a href="#cta" class="btn btn-solid">Inquire</a></div>
+    <div class="ccard">
+      <h3>Follow along</h3>
+      <p>See what's happening with 919 Golf Co. — updates, events, tips, and a look at the action on and off the course.</p>
+      <p style="margin-top:20px"><a href="#">Instagram</a> &nbsp;·&nbsp; <a href="#">Facebook</a></p>
     </div>
-    <div class="pkg">
-      <div class="idx">03</div>
-      <div><h3>Invitational</h3><div class="dur">6–8 hour rental</div></div>
-      <p>Great for corporate events, fundraisers, festivals, and all-day events.</p>
-      <div class="act"><a href="#cta" class="btn btn-line">Inquire</a></div>
+    <div class="ccard">
+      <h3>Service area</h3>
+      <p>Locally owned and serving Raleigh, Durham, Chapel Hill, Cary, and the wider Triangle. Traveling 50+ miles out? Reach out for a travel quote.</p>
     </div>
   </div>
 </div></section>
-
-<section id="how" style="padding-top:0"><div class="wrap">
-  <div class="sec-head">
-    <div class="l"><h2>How it works</h2></div>
-    <div class="r"><p>Way easier than picking out your new driver.</p></div>
-  </div>
-  <div class="steps">
-    <div class="stp"><div class="n">01 / REACH OUT</div><h3>Tell us about the event</h3><p>Fill out a short inquiry with your date, location, and any questions. We send back a custom quote within 1–2 days.</p></div>
-    <div class="stp"><div class="n">02 / LOCK IT IN</div><h3>Sign and reserve</h3><p>A simple agreement and a 50% deposit hold your date. The deposit counts toward your total; the balance is due 7 days prior.</p></div>
-    <div class="stp"><div class="n">03 / PLAY</div><h3>Leave the rest to us</h3><p>We arrive early, set up, run the simulator all event, and break it down after. You just kick back and enjoy.</p></div>
-  </div>
-</div></section>
-
-<section class="addons"><div class="wrap">
-  <div class="sec-head">
-    <div class="l"><h2>Add-ons</h2></div>
-    <div class="r"><p>Optional extras to fit the event.</p></div>
-  </div>
-  <div class="add-grid">
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V10M12 20V4M18 20v-7"/></svg></div><div><h4>Custom Leaderboard</h4><p>Branded real-time scoring displays. Built for competition, team building, and corporate events.</p></div></div>
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.1h-4.4L8.5 9.5z"/></svg></div><div><h4>Soccer Golf<span class="soon">Soon</span></h4><p>Aim, kick, and score. A blend of soccer and golf — perfect for all ages.</p></div></div>
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-10a7 7 0 0114 0c0 4.8-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div><div><h4>Extended Travel</h4><p>Events 50+ miles beyond Raleigh/Durham? Reach out — we offer reasonable travel quotes.</p></div></div>
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><div><h4>Additional Hours</h4><p>Extend your event beyond the selected package.</p></div></div>
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg></div><div><h4>Generator</h4><p>No 120V power within 100 ft? We'll bring a generator for a small fee.</p></div></div>
-    <div class="add"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Full-Service Setup</h4><p>Included with every package — delivery, setup, an attendant, and teardown.</p></div></div>
-  </div>
-</div></section>
-
-<section class="cta" id="cta" style="padding:0"><div class="wrap">
-  <div>
-    <h2>Let's make your event one to remember.</h2>
-    <p>Fill out a brief inquiry and we'll come back with custom pricing and availability.</p>
-  </div>
-  <a href="#" class="btn">Request a Quote</a>
-</div></section>
-
 <footer><div class="wrap">
   <div>© 2026 919 Golf Co. — Locally owned, serving the Triangle &amp; NC</div>
   <div>info@919golfco.com</div>
 </div></footer>
-
 <a href="index.html" id="919-concepts-back" style="position:fixed;left:16px;bottom:16px;z-index:99;background:#141414;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:11px 16px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.28)">← All directions</a>
 </body>
 </html>
