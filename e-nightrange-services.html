@@ -121,7 +121,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
 .soc svg{width:16px;height:16px}
 
 @media(max-width:900px){
-  .navlinks{display:none}
+  
   .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:60px}
   .readout .wrap{grid-template-columns:1fr}
   .rd{border-right:none;border-bottom:1px solid rgba(241,238,231,.1)}
@@ -175,12 +175,37 @@ input:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:-1px}
 textarea{min-height:112px;resize:vertical}
 .fnote{font-size:12.5px;color:var(--bone-dim);margin-top:22px;line-height:1.7}
 @media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid,.bkgrid{grid-template-columns:1fr}.f-half,.f-quarter{grid-column:span 4}}
+
+/* --- responsive nav --- */
+nav{position:sticky;top:0}
+.navtoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.hamb{display:none}
+@media(max-width:900px){
+  nav .wrap{flex-wrap:nowrap;gap:12px}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+        cursor:pointer;order:9;align-items:center;flex:0 0 auto;color:var(--bone)}
+  .hamb span{width:21px;height:2px;background:currentColor;display:block;transition:transform .22s,opacity .18s}
+  .navtoggle:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .navtoggle:checked ~ .hamb span:nth-child(2){opacity:0}
+  .navtoggle:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    gap:0;padding:6px 0 10px;background:#0C1826;border-bottom:1px solid rgba(241,238,231,.14);
+    box-shadow:0 18px 34px rgba(0,0,0,.22);max-height:calc(100vh - 88px);overflow-y:auto}
+  .navtoggle:checked ~ .navlinks{display:flex}
+  .navlinks li{list-style:none}
+  .navlinks a{display:block;padding:15px 32px;opacity:1;font-size:15px;border-bottom:1px solid rgba(241,238,231,.14)}
+  .navlinks li:last-child a{border-bottom:none}
+  nav .btn{padding:11px 16px;font-size:12px;order:8;white-space:nowrap}
+  .logo img{height:28px}
+}
+@media(max-width:380px){ nav .btn{display:none} }
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a href="e-nightrange.html" style="text-decoration:none"><div class="logo"><img src="logo/919-lockup-h-cream.svg" alt="919 Golf Co."></div></a>
-  <ul class="navlinks"><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
+  <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
+  <ul class="navlinks"><li><a href="e-nightrange.html">Home</a></li><li><a href="e-nightrange-services.html">Services</a></li><li><a href="e-nightrange-faq.html">FAQ</a></li><li><a href="e-nightrange-contact.html">Contact</a></li><li><a href="e-nightrange-book.html">Book</a></li></ul>
   <a href="e-nightrange-book.html" class="btn btn-amber">Get a Quote</a>
 </div></nav>
 <header class="phead"><div class="wrap"><div class="eyebrow">Packages for every golfer</div><h1>Services</h1><p>Three ways to bring the course to your guests. Every package includes delivery, setup, an attendant for the full event, and teardown.</p></div></header>

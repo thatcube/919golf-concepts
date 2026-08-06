@@ -113,7 +113,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .hero .wrap{grid-template-columns:1fr;padding-top:72px;padding-bottom:72px}
   .photo-slot{aspect-ratio:16/10}
   .spec-grid,.pkg-grid,.steps,.addon-grid{grid-template-columns:1fr}
-  .navlinks{display:none}
+  
   .strip .wrap{gap:26px}
 }
 
@@ -144,12 +144,37 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .ccard p{color:var(--muted);font-size:15.5px}
 .ccard a{color:var(--green-700);font-weight:600}
 @media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid{grid-template-columns:1fr}}
-.svcshots.one{grid-template-columns:1fr}.svcshots.one .ss{aspect-ratio:21/7}.svcshots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 60px}.ss{aspect-ratio:4/3;background:var(--cream-dk);border:1px dashed rgba(30,59,50,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;color:var(--muted)}.ss span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.7}@media(max-width:820px){.svcshots{grid-template-columns:1fr}}.soc{display:flex;gap:10px}.soc a{width:36px;height:36px;border:1px solid rgba(250,237,215,.28);display:flex;align-items:center;justify-content:center;color:var(--cream);transition:.2s}.soc a:hover{border-color:var(--gold);color:var(--gold)}.soc svg{width:17px;height:17px}</style>
+.svcshots.one{grid-template-columns:1fr}.svcshots.one .ss{aspect-ratio:21/7}.svcshots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 60px}.ss{aspect-ratio:4/3;background:var(--cream-dk);border:1px dashed rgba(30,59,50,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;color:var(--muted)}.ss span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.7}@media(max-width:820px){.svcshots{grid-template-columns:1fr}}.soc{display:flex;gap:10px}.soc a{width:36px;height:36px;border:1px solid rgba(250,237,215,.28);display:flex;align-items:center;justify-content:center;color:var(--cream);transition:.2s}.soc a:hover{border-color:var(--gold);color:var(--gold)}.soc svg{width:17px;height:17px}
+/* --- responsive nav --- */
+nav{position:sticky;top:0}
+.navtoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.hamb{display:none}
+@media(max-width:900px){
+  nav .wrap{flex-wrap:nowrap;gap:12px}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+        cursor:pointer;order:9;align-items:center;flex:0 0 auto;color:var(--cream)}
+  .hamb span{width:21px;height:2px;background:currentColor;display:block;transition:transform .22s,opacity .18s}
+  .navtoggle:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .navtoggle:checked ~ .hamb span:nth-child(2){opacity:0}
+  .navtoggle:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    gap:0;padding:6px 0 10px;background:#16362D;border-bottom:1px solid rgba(201,162,39,.28);
+    box-shadow:0 18px 34px rgba(0,0,0,.22);max-height:calc(100vh - 88px);overflow-y:auto}
+  .navtoggle:checked ~ .navlinks{display:flex}
+  .navlinks li{list-style:none}
+  .navlinks a{display:block;padding:15px 32px;opacity:1;font-size:15px;border-bottom:1px solid rgba(201,162,39,.28)}
+  .navlinks li:last-child a{border-bottom:none}
+  nav .btn{padding:11px 16px;font-size:12px;order:8;white-space:nowrap}
+  .logo img{height:28px}
+}
+@media(max-width:380px){ nav .btn{display:none} }
+</style>
 </head>
 <body>
 <nav><div class="wrap">
   <a href="a-the-club.html" style="text-decoration:none"><div class="logo"><img src="logo/919-lockup-h-cream.svg" alt="919 Golf Co."></div></a>
-  <ul class="navlinks"><li><a href="a-the-club-services.html" style="opacity:1;font-weight:700">Services</a></li><li><a href="a-the-club-faq.html">FAQ</a></li><li><a href="a-the-club-contact.html">Contact</a></li><li><a href="a-the-club-book.html">Book</a></li></ul>
+  <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
+  <ul class="navlinks"><li><a href="a-the-club.html">Home</a></li><li><a href="a-the-club-services.html" style="opacity:1;font-weight:700">Services</a></li><li><a href="a-the-club-faq.html">FAQ</a></li><li><a href="a-the-club-contact.html">Contact</a></li><li><a href="a-the-club-book.html">Book</a></li></ul>
   <a href="a-the-club-book.html" class="btn btn-gold">Request a Quote</a>
 </div></nav>
 <header class="phead"><div class="wrap">

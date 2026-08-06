@@ -112,7 +112,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 
 @media(max-width:900px){
   .stat-grid,.pkg-grid,.steps,.addon-grid{grid-template-columns:1fr}
-  .navlinks{display:none}
+  
   .photo-slot{aspect-ratio:16/10}
 }
 
@@ -141,12 +141,37 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .ccard p{color:var(--grey);font-size:15.5px}
 .ccard a{color:var(--lime);font-weight:700}
 @media(max-width:900px){.prow{grid-template-columns:1fr;gap:10px}.prow .r{text-align:left}.cgrid{grid-template-columns:1fr}}
-.soc{display:flex;gap:10px}.soc a{width:36px;height:36px;border:1px solid rgba(250,237,215,.2);border-radius:100px;display:flex;align-items:center;justify-content:center;color:var(--white);transition:.2s}.soc a:hover{border-color:var(--lime);color:var(--lime)}.soc svg{width:17px;height:17px}</style>
+.soc{display:flex;gap:10px}.soc a{width:36px;height:36px;border:1px solid rgba(250,237,215,.2);border-radius:100px;display:flex;align-items:center;justify-content:center;color:var(--white);transition:.2s}.soc a:hover{border-color:var(--lime);color:var(--lime)}.soc svg{width:17px;height:17px}
+/* --- responsive nav --- */
+nav{position:sticky;top:0}
+.navtoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.hamb{display:none}
+@media(max-width:900px){
+  nav .wrap{flex-wrap:nowrap;gap:12px}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+        cursor:pointer;order:9;align-items:center;flex:0 0 auto;color:var(--white)}
+  .hamb span{width:21px;height:2px;background:currentColor;display:block;transition:transform .22s,opacity .18s}
+  .navtoggle:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .navtoggle:checked ~ .hamb span:nth-child(2){opacity:0}
+  .navtoggle:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    gap:0;padding:6px 0 10px;background:#16362D;border-bottom:1px solid rgba(250,237,215,.16);
+    box-shadow:0 18px 34px rgba(0,0,0,.22);max-height:calc(100vh - 88px);overflow-y:auto}
+  .navtoggle:checked ~ .navlinks{display:flex}
+  .navlinks li{list-style:none}
+  .navlinks a{display:block;padding:15px 32px;opacity:1;font-size:15px;border-bottom:1px solid rgba(250,237,215,.16)}
+  .navlinks li:last-child a{border-bottom:none}
+  nav .btn{padding:11px 16px;font-size:12px;order:8;white-space:nowrap}
+  .logo img{height:28px}
+}
+@media(max-width:380px){ nav .btn{display:none} }
+</style>
 </head>
 <body>
 <nav><div class="wrap">
   <a href="b-floodlight.html" style="text-decoration:none"><div class="logo"><img src="logo/919-lockup-h-cream.svg" alt="919 Golf Co."></div></a>
-  <ul class="navlinks"><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html">FAQ</a></li><li><a href="b-floodlight-contact.html" style="opacity:1;font-weight:700">Contact</a></li></ul>
+  <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
+  <ul class="navlinks"><li><a href="b-floodlight.html">Home</a></li><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html">FAQ</a></li><li><a href="b-floodlight-contact.html" style="opacity:1;font-weight:700">Contact</a></li><li><a href="b-floodlight-book.html">Book</a></li></ul>
   <a href="b-floodlight-book.html" class="btn btn-lime">Get a Quote</a>
 </div></nav>
 <header class="phead"><div class="wrap">
