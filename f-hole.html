@@ -193,10 +193,10 @@ footer{padding:56px 28px 0}
   .spec-float{display:none}
 }
 @media(max-width:900px){
-  .navbar{padding:0 16px;margin-top:12px;margin-bottom:-76px;top:12px}
+  .navbar{padding:0 16px;margin-top:16px;margin-bottom:-80px;top:16px}
   .navinner{height:64px;max-width:none;padding:0 10px 0 18px;position:relative;flex-wrap:nowrap;gap:10px}
-  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
-    cursor:pointer;align-items:center;flex:0 0 auto;order:9;color:var(--ink)}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;
+    cursor:pointer;align-items:center;flex:0 0 auto;order:9;color:var(--ink);line-height:0}
   .hamb span{width:20px;height:2px;background:currentColor;display:block;transition:transform .22s,opacity .18s}
   .navtoggle:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .navtoggle:checked ~ .hamb span:nth-child(2){opacity:0}
@@ -234,6 +234,7 @@ nav .btn,.navcta{white-space:nowrap}
 @media(max-width:900px){ body{padding-bottom:64px} }
 
 /* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
+label.hamb{margin:0!important;font-size:0;line-height:0}
 .qarrow{display:none;width:15px;height:15px}
 .qshort{display:none}
 @media(max-width:413px){

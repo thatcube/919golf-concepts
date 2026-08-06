@@ -129,8 +129,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .bkform .sub{color:var(--body-c);font-size:15px;margin-bottom:30px}
 .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .f-full{grid-column:span 4}.f-half{grid-column:span 2}.f-quarter{grid-column:span 1}
-label{display:block;font-size:12.5px;font-weight:600;margin-bottom:7px}
-label .req{color:var(--green)}
+.fgrid label{display:block;font-size:12.5px;font-weight:600;margin-bottom:7px}
+.fgrid label .req{color:var(--green)}
 input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14.5px;background:var(--bg);color:var(--ink)}
 input:focus,textarea:focus{outline:2px solid var(--green);outline-offset:-1px}
 textarea{min-height:112px;resize:vertical}
@@ -142,14 +142,14 @@ nav{position:sticky;top:0}
 .navtoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
 .hamb{display:none}
 @media(max-width:900px){
-  nav .wrap{flex-wrap:nowrap;gap:12px}
-  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  nav .wrap{position:relative;flex-wrap:nowrap;gap:12px}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;
         cursor:pointer;order:9;align-items:center;flex:0 0 auto;color:var(--ink)}
   .hamb span{width:21px;height:2px;background:currentColor;display:block;transition:transform .22s,opacity .18s}
   .navtoggle:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .navtoggle:checked ~ .hamb span:nth-child(2){opacity:0}
   .navtoggle:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+  .navlinks{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;border-radius:0 0 14px 14px;overflow:hidden;flex-direction:column;
     gap:0;padding:6px 0 10px;background:#FBF7EE;border-bottom:1px solid var(--line);
     box-shadow:0 18px 34px rgba(0,0,0,.22);max-height:calc(100vh - 88px);overflow-y:auto}
   .navtoggle:checked ~ .navlinks{display:flex}
@@ -166,6 +166,7 @@ nav .btn,.navcta{white-space:nowrap}
 @media(max-width:900px){ body{padding-bottom:64px} }
 
 /* --- narrow screens: keep the wordmark, collapse the CTA to its arrow --- */
+label.hamb{margin:0!important;font-size:0;line-height:0}
 .qarrow{display:none;width:15px;height:15px}
 .qshort{display:none}
 @media(max-width:401px){
