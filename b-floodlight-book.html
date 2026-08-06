@@ -111,6 +111,9 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:44px 0;font-size:13.5p
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 
 @media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding:44px 32px 56px}
+  .hero h1{font-size:clamp(34px,8.4vw,52px)}
+  .hero-trust{gap:12px}
   .stat-grid,.pkg-grid,.steps,.addon-grid{grid-template-columns:1fr}
   
   .photo-slot{aspect-ratio:16/10}
@@ -159,11 +162,19 @@ nav{position:sticky;top:0}
   .logo img{height:28px}
 }
 @media(max-width:380px){ nav .btn{display:none} }
+h1,h2,h3,h4{overflow-wrap:break-word}
+@media(max-width:420px){
+  .pkg h3{font-size:28px}
+  .stat .val{font-size:36px}
+  .sec-head h2{font-size:30px}
+  .pkg,.stat{padding-left:22px;padding-right:22px}
+  .wrap{padding:0 20px}
+}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
-  <div class="logo"><img src="logo/919-lockup-h-cream.svg" alt="919 Golf Co."></div>
+  <div class="logo"><img src="logo/919-round-lockup-cream.svg" alt="919 Golf Co."></div>
   <input type="checkbox" id="navmenu" class="navtoggle"><label for="navmenu" class="hamb" aria-label="Open menu"><span></span><span></span><span></span></label>
   <ul class="navlinks"><li><a href="b-floodlight.html">Home</a></li><li><a href="b-floodlight-services.html">Services</a></li><li><a href="b-floodlight-faq.html">FAQ</a></li><li><a href="b-floodlight-contact.html">Contact</a></li><li><a href="b-floodlight-book.html">Book</a></li></ul>
   <a href="b-floodlight-book.html" class="btn btn-lime">Get a Quote</a>
