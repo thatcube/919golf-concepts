@@ -3,124 +3,187 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>919 Golf Co. — Three Design Directions</title>
+<title>919 Golf Co. — Design Directions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FBF7EE;--ink:#1E3B32;--muted:#5A6B60;--line:#E6DFCE;--accent:#1E3B32}
+:root{--bg:#FBF7EE;--card:#fff;--ink:#1A211D;--muted:#5F6E64;--line:#E5DFD0;--maxw:1080px}
 *{box-sizing:border-box}
 body{margin:0;font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-header{padding:72px 0 44px;border-bottom:1px solid var(--line)}
-h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,56px);margin:0 0 18px;letter-spacing:-.02em;line-height:1.08}
-.sub{font-size:17.5px;color:var(--muted);max-width:62ch;line-height:1.7;margin:0}
-.note{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;font-size:15px;color:var(--muted);line-height:1.7;max-width:70ch}
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:52px 0 20px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;text-decoration:none;color:inherit}
-.card:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(22,33,27,.1);border-color:var(--accent)}
-.swatch{height:118px;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-.sw-a{background:linear-gradient(150deg,#16362D,#537261);color:#BFA570}
-.sw-b{background:#1E3B32;color:#BFA570}
-.sw-c{background:#FAEDD7;color:#1E3B32}
-.sw-d{background:#FCFCFA;color:#141414;border-bottom:1px solid #E3E2DC}
-.card .body{padding:26px;flex-grow:1;display:flex;flex-direction:column}
-.card h2{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:25px;margin:0 0 4px;letter-spacing:-.01em}
-.card .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
-.pages{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 0}
-.pages a{font-size:11.5px;border:1px solid var(--line);border-radius:100px;padding:5px 12px;text-decoration:none;color:var(--muted);background:#fff;transition:.18s}
-.pages a:hover{border-color:var(--accent);color:var(--ink)}
-.card p{font-size:14.5px;color:var(--muted);line-height:1.65;margin:0 0 18px;flex-grow:1}
-.meta{border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--muted);line-height:1.9}
-.meta b{color:var(--ink);font-weight:600}
-.open{margin-top:16px;display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:8px;font-size:13.5px;font-weight:600;text-align:center}
-section.q{padding:44px 0 88px;border-top:1px solid var(--line);margin-top:36px}
-section.q h3{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:28px;margin:0 0 20px}
-ol{margin:0;padding-left:22px;color:var(--muted);font-size:16px;line-height:2}
-ol b{color:var(--ink)}
-@media(max-width:880px){.cards{grid-template-columns:1fr}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+a{color:inherit}
+
+/* header — short */
+header{padding:52px 0 30px}
+h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,46px);letter-spacing:-.02em;line-height:1.08;margin:0 0 12px}
+header p{font-size:16.5px;color:var(--muted);line-height:1.6;margin:0;max-width:58ch}
+
+/* grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:8px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.22s}
+.card:hover{border-color:var(--ink);box-shadow:0 12px 34px rgba(26,33,29,.09);transform:translateY(-3px)}
+
+.top{padding:24px 26px;display:flex;align-items:center;gap:18px;min-height:104px}
+.letter{font-family:'Manrope',sans-serif;font-weight:800;font-size:48px;line-height:1;letter-spacing:-.04em}
+.dots{display:flex;gap:6px;margin-left:auto}
+.dot{width:19px;height:19px;border-radius:50%;border:1px solid rgba(0,0,0,.14)}
+
+/* per-direction top bands */
+.t-a{background:#16362D}      .t-a .letter{color:#BFA570}
+.t-b{background:#1E3B32}      .t-b .letter{color:#FAEDD7}
+.t-c{background:#FAEDD7}      .t-c .letter{color:#1E3B32}
+.t-d{background:#FCFCFA;border-bottom:1px solid var(--line)} .t-d .letter{color:#141414}
+
+.body{padding:22px 26px 24px;display:flex;flex-direction:column;flex:1}
+.name{font-family:'Newsreader',Georgia,serif;font-size:25px;letter-spacing:-.01em;margin:0 0 4px}
+.tag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+.desc{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 18px;flex:1}
+.open{display:block;text-align:center;background:var(--ink);color:#fff;padding:12px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s}
+.open:hover{background:#000}
+.pages{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.pages a{font-size:12px;border:1px solid var(--line);border-radius:100px;padding:6px 12px;text-decoration:none;color:var(--muted);transition:.18s}
+.pages a:hover{border-color:var(--ink);color:var(--ink)}
+
+/* extras */
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:14px 0 0}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;text-decoration:none;display:block;transition:.22s}
+.ex:hover{border-color:var(--ink);transform:translateY(-3px)}
+.ex h3{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:21px;margin:0 0 7px}
+.ex p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+.ex .go{font-size:13px;font-weight:700;margin-top:12px;display:inline-block}
+
+/* notes */
+.notes{margin:44px 0 0;border-top:1px solid var(--line);padding-top:32px}
+.notes h2{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:24px;margin:0 0 16px}
+.notes ol{margin:0;padding-left:20px;color:var(--muted);font-size:15.5px;line-height:1.95}
+.notes ol b{color:var(--ink)}
+.fine{margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.7;max-width:76ch}
+footer{padding:44px 0 72px}
+
+@media(max-width:820px){.grid,.extras{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header><div class="wrap">
   <h1>919 Golf Co. — four design directions</h1>
-  <p class="sub">Four takes on the same content. A, B, and C keep your current green-and-gold palette and vary the layout and typography. D deliberately throws the palette out to show what a cleaner, more minimal direction looks like — nothing here is locked in, including the colors. Each direction is a real five-page site — Home, Services, FAQ, Contact, and Book Now — matching the structure you have now, so you can click through the whole thing rather than judging a single screen.</p>
-  <div class="note"><b>About the photos:</b> these use the one hero photo you already have. Every layout is built to hold up with very little photography, leaning on type, color, and spacing instead — so nothing looks broken today, and all three get noticeably better as you add real event shots.</div>
+  <p>Same content and your real logo in all four. Pick whichever feels most like the business — nothing is locked in, including the colors.</p>
 </div></header>
 
 <div class="wrap">
-<div class="cards">
 
-  <a class="card" href="a-the-club.html">
-    <div class="swatch sw-a">Direction A</div>
-    <div class="body">
-      <h2>The Club</h2>
-      <div class="tag">Premium · Traditional</div>
-      <p>Your green and gold, pushed toward a private-club invitation. Full-bleed hero photo, generous space, classic serif. Closest to what you have now, but tightened up.</p>
-      <div class="meta"><b>Mood:</b> refined, established<br><b>Best for:</b> weddings, corporate<br><b>Closest to:</b> your current site</div>
-      <span class="open">Open Direction A →</span><div class="pages"><a href="a-the-club.html">Home</a><a href="a-the-club-services.html">Services</a><a href="a-the-club-faq.html">FAQ</a><a href="a-the-club-contact.html">Contact</a><a href="a-the-club-book.html">Book</a></div>
-    </div>
-  </a>
+<div class="grid">
 
-  <a class="card" href="b-floodlight.html">
-    <div class="swatch sw-b">Direction B</div>
-    <div class="body">
-      <h2>Fairway</h2>
-      <div class="tag">Bold · Confident</div>
-      <p>Same palette, much bigger voice. Heavy display type, tighter cards, more contrast. The best match for the humor already in your writing.</p>
-      <div class="meta"><b>Mood:</b> energetic, playful<br><b>Best for:</b> parties, tailgates<br><b>Biggest change:</b> typography</div>
-      <span class="open">Open Direction B →</span><div class="pages"><a href="b-floodlight.html">Home</a><a href="b-floodlight-services.html">Services</a><a href="b-floodlight-faq.html">FAQ</a><a href="b-floodlight-contact.html">Contact</a><a href="b-floodlight-book.html">Book</a></div>
-    </div>
-  </a>
-
-  <a class="card" href="c-clubhouse.html">
-    <div class="swatch sw-c">Direction C</div>
-    <div class="body">
-      <h2>Clubhouse</h2>
-      <div class="tag">Clean · Modern</div>
-      <p>Your cream and sage leading instead of the dark green. Light, uncluttered, easiest to scan. Widest appeal and the most forgiving as you add content later.</p>
-      <div class="meta"><b>Mood:</b> approachable, clear<br><b>Best for:</b> everything<br><b>Biggest change:</b> light, not dark</div>
-      <span class="open">Open Direction C →</span><div class="pages"><a href="c-clubhouse.html">Home</a><a href="c-clubhouse-services.html">Services</a><a href="c-clubhouse-faq.html">FAQ</a><a href="c-clubhouse-contact.html">Contact</a><a href="c-clubhouse-book.html">Book</a></div>
-    </div>
-  </a>
-
-
-  <a class="card" href="d-range.html">
-    <div class="swatch sw-d">Direction D</div>
-    <div class="body">
-      <h2>Range</h2>
-      <div class="tag">Minimal · Off-Brand</div>
-      <p>Deliberately not golf colors. Off-white, near-black, thin rules, one sharp accent. Reads like a modern service company rather than a country club — and it's the only one here that doesn't look like every other golf website.</p>
-      <div class="meta"><b>Mood:</b> clean, precise<br><b>Best for:</b> corporate, premium<br><b>Biggest change:</b> drops the palette</div>
-      <span class="open">Open Direction D →</span><div class="pages"><a href="d-range.html">Home</a><a href="d-range-services.html">Services</a><a href="d-range-faq.html">FAQ</a><a href="d-range-contact.html">Contact</a><a href="d-range-book.html">Book</a></div>
-    </div>
-  </a>
-
-  <a class="card" href="logo-options.html" style="grid-column:1/-1">
-    <div class="body" style="flex-direction:row;align-items:center;gap:26px;flex-wrap:wrap">
-      <img src="logo/919-lockup-h.svg" alt="919 Golf Co." style="height:52px;width:auto">
-      <div style="flex:1;min-width:240px">
-        <h2 style="margin-bottom:6px">Logo &amp; color options</h2>
-        <p style="margin:0">Your logo in six colors, plus a horizontal version rebuilt for website headers and an icon-only mark for favicons and social.</p>
+  <div class="card">
+    <div class="top t-a">
+      <div class="letter">A</div>
+      <div class="dots">
+        <span class="dot" style="background:#16362D"></span>
+        <span class="dot" style="background:#BFA570"></span>
+        <span class="dot" style="background:#FAEDD7"></span>
       </div>
-      <span class="open" style="margin:0">Open →</span>
     </div>
+    <div class="body">
+      <div class="name">The Club</div>
+      <div class="tag">Premium · Traditional</div>
+      <p class="desc">Your green and gold pushed toward a private-club invitation. Full-bleed photo, classic serif, lots of room. Closest to what you have now.</p>
+      <a class="open" href="a-the-club.html">Open Direction A →</a>
+      <div class="pages">
+        <a href="a-the-club.html">Home</a><a href="a-the-club-services.html">Services</a><a href="a-the-club-faq.html">FAQ</a><a href="a-the-club-contact.html">Contact</a><a href="a-the-club-book.html">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top t-b">
+      <div class="letter">B</div>
+      <div class="dots">
+        <span class="dot" style="background:#1E3B32"></span>
+        <span class="dot" style="background:#BFA570"></span>
+        <span class="dot" style="background:#9DAFA2"></span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="name">Fairway</div>
+      <div class="tag">Bold · Confident</div>
+      <p class="desc">Same palette, much bigger voice. Heavy display type and tighter cards. The best match for the humor already in your writing.</p>
+      <a class="open" href="b-floodlight.html">Open Direction B →</a>
+      <div class="pages">
+        <a href="b-floodlight.html">Home</a><a href="b-floodlight-services.html">Services</a><a href="b-floodlight-faq.html">FAQ</a><a href="b-floodlight-contact.html">Contact</a><a href="b-floodlight-book.html">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top t-c">
+      <div class="letter">C</div>
+      <div class="dots">
+        <span class="dot" style="background:#FAEDD7"></span>
+        <span class="dot" style="background:#1E3B32"></span>
+        <span class="dot" style="background:#E7EDE8"></span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="name">Clubhouse</div>
+      <div class="tag">Light · Open</div>
+      <p class="desc">Cream and sage leading instead of the dark green. Light, uncluttered, easiest to scan. Widest appeal of the four.</p>
+      <a class="open" href="c-clubhouse.html">Open Direction C →</a>
+      <div class="pages">
+        <a href="c-clubhouse.html">Home</a><a href="c-clubhouse-services.html">Services</a><a href="c-clubhouse-faq.html">FAQ</a><a href="c-clubhouse-contact.html">Contact</a><a href="c-clubhouse-book.html">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top t-d">
+      <div class="letter">D</div>
+      <div class="dots">
+        <span class="dot" style="background:#FCFCFA"></span>
+        <span class="dot" style="background:#141414"></span>
+        <span class="dot" style="background:#D9FF4A"></span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="name">Range</div>
+      <div class="tag">Minimal · No Green</div>
+      <p class="desc">Drops the golf colors entirely. Off-white, near-black, thin rules, one sharp accent. The only one that doesn't look like every other golf site.</p>
+      <a class="open" href="d-range.html">Open Direction D →</a>
+      <div class="pages">
+        <a href="d-range.html">Home</a><a href="d-range-services.html">Services</a><a href="d-range-faq.html">FAQ</a><a href="d-range-contact.html">Contact</a><a href="d-range-book.html">Book</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="extras">
+  <a class="ex" href="hero-copy.html">
+    <h3>Hero copy &amp; SEO</h3>
+    <p>Five options for the main headline, and why the current one is costing you search traffic.</p>
+    <span class="go">Read →</span>
+  </a>
+  <a class="ex" href="logo-options.html">
+    <h3>Logo &amp; colors</h3>
+    <p>Your logo in six colors, plus a horizontal version rebuilt for website headers.</p>
+    <span class="go">Read →</span>
   </a>
 </div>
 
-<section class="q"><div>
-  <h3>What to tell us after you look</h3>
+<div class="notes">
+  <h2>What to tell us after you look</h2>
   <ol>
-    <li><b>Which one feels most like your business?</b> Gut reaction is fine — don't overthink it.</li>
-    <li><b>Do you actually want to keep green and gold?</b> D shows what happens without them. No wrong answer.</li>
-    <li><b>Which one would your ideal customer respond to?</b> That may not be the same as your favorite.</li>
-    <li><b>Anything you want to steal across directions?</b> Mixing is completely fine — the packages from one, the colors from another.</li>
-    <li><b>Anything that feels wrong for the brand?</b> Just as useful to know.</li>
-    <li><b>What photos can you get?</b> Even a few good shots of a real event change what's possible.</li>
+    <li><b>Which letter feels most like the business?</b> Gut reaction is fine.</li>
+    <li><b>Do you want to keep green and gold?</b> D shows what happens without them.</li>
+    <li><b>Anything worth stealing across directions?</b> Mixing is fine.</li>
+    <li><b>What photos can you get?</b> Even a few real event shots change what's possible.</li>
   </ol>
-</div></section>
+  <p class="fine"><b>On the photos:</b> these use the one hero image you already have. Every layout is built to hold up with very little photography — nothing looks broken today, and all four get noticeably better as you add real event shots.</p>
 </div>
+
+</div>
+
+<footer><div class="wrap"></div></footer>
 
 </body>
 </html>

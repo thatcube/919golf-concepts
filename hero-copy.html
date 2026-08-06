@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero copy — options &amp; tradeoffs — 919 Golf Co.</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7EE;--ink:#1E3B32;--muted:#5A6B60;--line:#E6DFCE;--ok:#1E7A4D;--bad:#B4462F;--warn:#B07D2B}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+header{padding:64px 0 34px;border-bottom:1px solid var(--line)}
+h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(32px,4.4vw,50px);margin:0 0 16px;letter-spacing:-.02em;line-height:1.1}
+.sub{font-size:17px;color:var(--muted);max-width:66ch;line-height:1.7;margin:0}
+h2{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:29px;margin:56px 0 10px}
+.lede{color:var(--muted);font-size:15.5px;line-height:1.7;margin:0 0 24px;max-width:72ch}
+.callout{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:15px;color:var(--muted);line-height:1.75}
+.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0 8px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+th{background:#F5F0E3;font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:none}
+.y{color:var(--ok);font-weight:700}.n{color:var(--bad);font-weight:700}.m{color:var(--warn);font-weight:700}
+.opt{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:22px 0;background:#fff}
+.opt .prev{padding:44px 40px;background:#1E3B32;color:#FAEDD7}
+.opt .prev .eb{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#BFA570;font-weight:700;margin-bottom:14px}
+.opt .prev .hh{font-family:'Archivo Black',system-ui,sans-serif;font-size:clamp(26px,3.6vw,40px);line-height:1.04;letter-spacing:-.02em;margin:0 0 12px}
+.opt .prev .hs{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:19px;color:#BFA570;margin:0 0 14px}
+.opt .prev p{font-size:15px;color:rgba(250,237,215,.72);margin:0;max-width:56ch;line-height:1.65}
+.opt .meta{padding:20px 24px}
+.opt .meta .name{font-weight:700;font-size:14px;margin-bottom:9px}
+.opt .meta .row{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.opt .meta .row b{color:var(--ink)}
+.rec{border:2px solid var(--ok)}
+.rec .badge{background:var(--ok);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:10px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#F0EBDD;padding:2px 7px;border-radius:5px}
+pre{background:#1E3B32;color:#EDE7DA;border-radius:10px;padding:18px 20px;overflow-x:auto;font-size:12.5px;line-height:1.7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+footer{padding:56px 0 80px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <h1>The hero line: what it says vs. what it earns</h1>
+  <p class="sub">Right now the biggest text on the site is a tagline, not a description. That costs you twice — visitors don't immediately know what you sell, and Google has no idea what to rank you for.</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>The problem, measured</h2>
+<p class="lede">Your <code>&lt;h1&gt;</code> and <code>&lt;title&gt;</code> are the two most heavily weighted pieces of text on any page. Here's what's currently in them:</p>
+
+<table>
+  <tr><th>Search term people actually type</th><th>In your H1</th><th>In your title</th></tr>
+  <tr><td>golf simulator</td><td class="n">No</td><td class="y">Yes</td></tr>
+  <tr><td>mobile</td><td class="n">No</td><td class="y">Yes</td></tr>
+  <tr><td>rental / rent</td><td class="n">No</td><td class="n">No</td></tr>
+  <tr><td>Raleigh</td><td class="n">No</td><td class="n">No</td></tr>
+  <tr><td>Durham</td><td class="n">No</td><td class="n">No</td></tr>
+  <tr><td>Triangle / NC</td><td class="n">No</td><td class="n">No</td></tr>
+</table>
+
+<div class="callout"><b>The headline finding:</b> your location doesn't appear in your H1 <i>or</i> your title tag. For a business that only serves one metro area, that's the most valuable missing piece. Nobody searches "elevate your event" — they search "golf simulator rental raleigh."</div>
+
+<h2>The five-second test</h2>
+<p class="lede">Someone lands on the page and gives it about five seconds. "Elevate Your Event. One Swing at a Time." could plausibly be a caterer, a DJ, a photo booth, a party rental company, or a golf coach. The photo does the explaining that the words should be doing.</p>
+
+<h2>The options</h2>
+<p class="lede">Every one of these keeps your voice. The difference is what goes in the biggest text versus what gets demoted to a supporting line.</p>
+
+<div class="opt">
+  <div class="prev">
+    <div class="eb">Mobile Golf Simulator · The Triangle, NC</div>
+    <div class="hh">Elevate Your Event.<br>One Swing At A Time.</div>
+    <p>919 Golf Co. brings the excitement of the golf course directly to your guests.</p>
+  </div>
+  <div class="meta">
+    <div class="name">Option 0 — What you have now</div>
+    <div class="row"><span>Clarity in 5s: <b class="n">Weak</b></span><span>SEO value: <b class="n">Very low</b></span><span>Voice: <b class="y">Strong</b></span></div>
+  </div>
+</div>
+
+<div class="opt">
+  <div class="prev">
+    <div class="eb">Weddings · Corporate · Tailgates</div>
+    <div class="hh">Mobile Golf Simulator Rental in Raleigh &amp; The Triangle</div>
+    <p>Tour-level technology, a spacious enclosure, and everything handled start to finish.</p>
+  </div>
+  <div class="meta">
+    <div class="name">Option 1 — Keyword-led</div>
+    <div class="row"><span>Clarity in 5s: <b class="y">Excellent</b></span><span>SEO value: <b class="y">Excellent</b></span><span>Voice: <b class="n">Flat</b></span></div>
+  </div>
+</div>
+
+<div class="opt">
+  <div class="prev">
+    <div class="eb">Mobile Golf Simulator · The Triangle, NC</div>
+    <div class="hh">We Bring The Golf Course To Your Event.</div>
+    <p>Tour-level technology in a 17×15ft enclosure — set up, staffed, and broken down by us.</p>
+  </div>
+  <div class="meta">
+    <div class="name">Option 2 — Benefit-led</div>
+    <div class="row"><span>Clarity in 5s: <b class="y">Strong</b></span><span>SEO value: <b class="m">Moderate</b></span><span>Voice: <b class="y">Good</b></span></div>
+  </div>
+</div>
+
+<div class="opt rec">
+  <div class="prev">
+    <div class="eb">Raleigh · Durham · The Triangle, NC</div>
+    <div class="hh">Mobile Golf Simulator Rental</div>
+    <div class="hs">Elevate your event, one swing at a time.</div>
+    <p>Tour-level technology in a spacious enclosure, for weddings, corporate events, and tailgates. We handle setup to teardown — you just play.</p>
+  </div>
+  <div class="meta">
+    <span class="badge">Recommended</span>
+    <div class="name">Option 3 — Hybrid: description first, tagline second</div>
+    <div class="row"><span>Clarity in 5s: <b class="y">Excellent</b></span><span>SEO value: <b class="y">Excellent</b></span><span>Voice: <b class="y">Kept</b></span></div>
+  </div>
+</div>
+
+<div class="opt">
+  <div class="prev">
+    <div class="eb">Mobile Golf Simulator Rental · The Triangle</div>
+    <div class="hh">The Golf Course.<br>Your Backyard.</div>
+    <p>Weddings, corporate events, tailgates — we roll up, set up, and run the whole thing.</p>
+  </div>
+  <div class="meta">
+    <div class="name">Option 4 — Voice-led</div>
+    <div class="row"><span>Clarity in 5s: <b class="y">Good</b></span><span>SEO value: <b class="m">Moderate</b></span><span>Voice: <b class="y">Strongest</b></span></div>
+  </div>
+</div>
+
+<h2>Why Option 3 wins</h2>
+<p class="lede">It stops treating "tagline" and "headline" as the same job. The H1 states plainly what the business is and where it operates — the part Google reads and a stranger needs. The tagline sits directly underneath in italic, still prominent, still yours. You lose nothing and gain the thing that was missing.</p>
+
+<div class="callout"><b>The general rule:</b> a tagline is what you say once someone already knows who you are. A headline is what you say to someone who doesn't. A business with strong brand recognition can lead with a tagline. A local business people haven't heard of yet cannot.</div>
+
+<h2>Fix the title tag at the same time</h2>
+<p class="lede">Your current title prints the brand twice and never mentions where you operate:</p>
+<pre>Now:  919 Golf Co. | 919 Golf Co. – Mobile Golf Simulator. Book Today!
+New:  Mobile Golf Simulator Rental | Raleigh &amp; The Triangle, NC</pre>
+<p class="lede">Squarespace appends the site title automatically, so the SEO title only needs the descriptive half. Set it in <b>Pages → Home → Settings → SEO</b>.</p>
+
+<div class="callout"><b>Also worth doing:</b> the homepage currently has <b>two</b> <code>&lt;h1&gt;</code> tags — "Elevate Your Event." and "One Swing at a Time." are each their own H1. A page should have exactly one. Combining them into a single heading fixes it without changing the design at all.</div>
+
+</div>
+
+<footer><div class="wrap">Hero previews shown in Direction B's type treatment for consistency — the copy applies to any of the four directions.</div></footer>
+
+</body>
+</html>
